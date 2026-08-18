@@ -236,23 +236,60 @@ footer{
   *,*::before,*::after{transition:none !important; animation:none !important;}
 }
 
-/* =================================================================
-   TITULARES ESTILO A24
-   A24 usa Akzidenz-Grotesk Extended / NB International: grotesca de
-   letras ANCHAS, peso medio y tracking normal — no versales
-   espaciadas. Archivo con font-stretch:125% es su equivalente libre.
-   El resto del sitio (fichas, creditos, rotulos) sigue en Jost.
-   ================================================================= */
-.page-head h1,
-.obra h2,
-.featured h2,
-.work h3{
-  font-family:"Archivo","Archivo Expanded",var(--font);
-  font-stretch:125%;
-  font-weight:500;
-  letter-spacing:-.01em;
+/* ---------------- TITULOS BILINGUES ---------------- */
+/* Ingles arriba, espanol debajo en tono mas bajo. */
+.page-head h1 .es{
+  display:block; margin-top:12px;
+  font-weight:200; font-size:.44em; letter-spacing:.09em; color:var(--dim-2);
 }
-.page-head h1{font-size:clamp(2.6rem,7.4vw,6rem); line-height:.94; font-weight:600;}
-.obra h2{font-size:clamp(2rem,5.4vw,4.2rem); line-height:.96; margin-bottom:18px;}
-.featured h2{font-size:clamp(2.1rem,5.8vw,4.6rem); line-height:.94;}
-.work h3{font-size:1.02rem; line-height:1.22; letter-spacing:0; font-weight:500;}
+.sec-head h2 .es{
+  margin-left:14px; padding-left:14px; border-left:1px solid var(--line-2);
+  font-weight:300; letter-spacing:.24em; color:var(--dim-2);
+}
+@media (max-width:860px){
+  .page-head h1 .es{font-size:.5em; margin-top:8px;}
+  .sec-head h2 .es{display:block; margin:8px 0 0; padding:0; border-left:0;}
+}
+
+/* ---------------- LAURELES DE FESTIVAL ---------------- */
+/* Cada exhibicion es una corona: rama izquierda + texto + rama
+   derecha (la misma rama reflejada). Vectorial y monocroma; los
+   premios se distinguen en blanco, no por color. */
+.laureles{
+  display:flex; flex-wrap:wrap; gap:34px 30px; align-items:flex-start;
+}
+.laurel{
+  display:inline-grid; grid-template-columns:auto minmax(94px,155px) auto;
+  align-items:center; gap:2px; color:var(--dim-2);
+  transition:color .3s;
+}
+.laurel:hover{color:var(--dim);}
+.laurel svg{width:50px; height:50px; display:block;}
+.laurel .der svg{transform:scaleX(-1);}
+.laurel .txt{
+  text-align:center; font-size:.58rem; line-height:1.45;
+  text-transform:uppercase; letter-spacing:.12em; font-weight:400;
+}
+.laurel.premio{color:var(--text);}
+.laurel.premio strong{
+  display:block; font-weight:400; font-size:.54rem;
+  letter-spacing:.2em; margin-bottom:5px; opacity:.75;
+}
+
+/* ---------------- PORTADA A SANGRE (estilo A24) ---------------- */
+/* La imagen/video de cada obra rompe la columna y cruza la pantalla
+   entera. 100vw + margen negativo centrado; body ya lleva
+   overflow-x:hidden para que la barra de scroll no desborde. */
+.obra .ratio,
+.featured .ratio{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+}
+.obra .ratio{padding-top:48%;}          /* mas panoramico a pantalla completa */
+@media (max-width:860px){
+  .obra .ratio{padding-top:56.25%;}
+  .laureles{gap:26px 20px;}
+  .laurel{grid-template-columns:auto minmax(84px,132px) auto;}
+  .laurel svg{width:42px; height:42px;}
+}
