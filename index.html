@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=14">
 <style>
   .hero{padding-top:56px; background:#000;}
   .hero .ratio{padding-top:56.25%;}
@@ -38,6 +38,7 @@
       <li><a href="music-video/">Music Video</a></li>
       <li><a href="about-us/">About US</a></li>
       <li><a href="contacts/">Contacts</a></li>
+      <li><button class="tema" type="button" aria-label="Cambiar entre dia y noche">Día</button></li>
     </ul>
   </nav>
 </header>
@@ -51,84 +52,48 @@
 
 <main id="main">
 
-  <!-- ============ DESTACADO ============ -->
-  <section id="soon">
-    <div class="featured">
-      <div class="ratio" data-video="xSKUE5IaLKI" data-titulo="EL CORAZON NO ES UNA BOMBA">
-        <img src="img/corazon.jpg" alt="EL CORAZON NO ES UNA BOMBA" width="1280" height="720"><span class="marco"><span class="marco-tipo">Trailer</span><h2>El corazón no es una bomba</h2></span>
-      </div>
-      <div class="body">
-        <span class="tag">Soon…</span>
-        <p class="sinopsis">A group of rebels walk through the building of the Ministry of Culture, Arts and Heritage of Chile, while the voiceover of Paulina Urrutia shows us where we are, describes the function of art in society and reflects on singularity and diversity. “The heart is not a bomb” not only questions systemic violence, but also suggests that the artistic phenomenon allows us to recognize ourselves and activate a powerful internal force capable of transforming reality.</p>
-        <dl class="creditos">
-          <dt>Written and directed by</dt><dd>Felipe Díaz Galarce</dd>
-          <dt>Executive Producer</dt><dd>Felipe Díaz Galarce</dd>
-          <dt>Co-production</dt><dd>Extension Center of the Ministry of Culture, Arts and Heritage of Chile (CENTEX) y dEUSeXmACHINAfilms</dd>
-          <dt>Producers</dt><dd>David Legue / Cristóbal Racordon Veliz (CENTEX)</dd>
-          <dt>Choreographic direction</dt><dd>David Legue</dd>
-          <dt>Narrated by</dt><dd>Paulina Urrutia (Ex Minister)</dd>
-          <dt>Dancers</dt><dd>Josefa Torres, Diego Clark Rojas, Alejandra Parga, Milca Galea Robles, Blanche Brunel, Anette Barraza Mena, Vanessa Bravo Espinoza, Nicole Ignacia, Lorena Núñez-Parra, Nicol Sánchez Santis, Mauricio Lagos Morales, Isidora Pizarro Torres, Seba Gaytán, Camila Henríquez Hurtubia, Montserrat Salas Acevedo, Javiera Rosas, Bgirl-Marche, Abril Cáceres Guzmán</dd>
-          <dt>DOP / Camera</dt><dd>Felipe Díaz Galarce</dd>
-          <dt>Drone</dt><dd>Kev thomas, Felipe Díaz Galarce</dd>
-          <dt>Cámara adicional</dt><dd>Aníbal Aravena</dd>
-          <dt>Post producción image</dt><dd>dEUSeXmACHINAfilms</dd>
-          <dt>Edit</dt><dd>Felipe Díaz Galarce, David Legue</dd>
-          <dt>Music</dt><dd>César Bernal (contrabajo), Luciano Laterra (piano), Méniére (electrónica), Javier Kurten (electrónica), Pablo Rivera (batería grabada por Rodrigo Pardo)</dd>
-          <dt>Sound post production</dt><dd>Fábrica del Ruido Records</dd>
-          <dt>Thanks to</dt><dd>Rocío Rivera Marchevsky, Sarah Stachova, Daniel Benítez, Cristian González, Miguel Alvayay, Juan Díaz Figueroa.</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ SHORT FILMS ============ -->
   <section id="short-films">
     <div class="sec-head">
-      <h2>Short Films<span class="es">Cortometrajes</span></h2><span class="count">06</span>
+      <h2>Short Films<span class="es">Cortometrajes</span></h2><span class="count">07</span>
       <a class="ver" href="short-films/">Ver todos ↗</a>
     </div>
     <div class="grid">
-      <div class="work-item">
-        <button class="work" data-video="FqOBFxX5uBc">
-        <span class="thumb"><img src="img/g/licuar.jpg" alt="ECDISIS acciones para mudar de piel. LICUAR" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>ECDISIS acciones para mudar de piel. LICUAR</h3><div class="meta">2021 · Essay dance documentary</div>
-      </button>
-        <a class="ficha-link" href="short-films/#ecdisis-licuar">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="IFP798ZNQTM">
-        <span class="thumb"><img src="img/g/morar.jpg" alt="MORAR" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>MORAR</h3><div class="meta">2023 · Essay dance documentary</div>
-      </button>
-        <a class="ficha-link" href="short-films/#morar">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="zlJKGHxcm4c">
-        <span class="thumb"><img src="img/g/exploradores.jpg" alt="EXPLORADORES DE LA REDONDA" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>EXPLORADORES DE LA REDONDA</h3><div class="meta">2025 · Documentary — Experimental</div>
-      </button>
-        <a class="ficha-link" href="short-films/#exploradores">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="EfCxbCzm9sE">
-        <span class="thumb"><img src="img/g/escape.jpg" alt="Escape" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Escape</h3><div class="meta">2020 · Essay dance documentary</div>
-      </button>
-        <a class="ficha-link" href="short-films/#escape">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="5uiqnHk1Ly8">
-        <span class="thumb"><img src="img/g/pandora.jpg" alt="Misoginia PANDORA" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Misoginia PANDORA</h3><div class="meta">2018 · Essay dance documentary</div>
-      </button>
-        <a class="ficha-link" href="short-films/#pandora">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="tdJenolvxac">
-        <span class="thumb"><img src="img/g/anhelo.jpg" alt="ANHELO" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>ANHELO</h3><div class="meta">Short film</div>
-      </button>
-      </div>
+      <a class="work" href="short-films/#corazon">
+        <span class="thumb"><img src="img/g/corazon.jpg" alt="El corazón no es una bomba" loading="lazy" width="760" height="428"></span>
+        <h3>El corazón no es una bomba</h3>
+        <span class="marca">Trailer</span>
+      </a>
+      <a class="work" href="short-films/#ecdisis-licuar">
+        <span class="thumb"><img src="img/g/licuar.jpg" alt="Ecdisis acciones para mudar de piel. Licuar" loading="lazy" width="760" height="428"></span>
+        <h3>Ecdisis acciones para mudar de piel. Licuar</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="short-films/#morar">
+        <span class="thumb"><img src="img/g/morar.jpg" alt="Morar" loading="lazy" width="760" height="428"></span>
+        <h3>Morar</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="short-films/#exploradores">
+        <span class="thumb"><img src="img/g/exploradores.jpg" alt="Exploradores de la Redonda" loading="lazy" width="760" height="428"></span>
+        <h3>Exploradores de la Redonda</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="short-films/#escape">
+        <span class="thumb"><img src="img/g/escape.jpg" alt="Escape" loading="lazy" width="760" height="428"></span>
+        <h3>Escape</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="short-films/#pandora">
+        <span class="thumb"><img src="img/g/pandora.jpg" alt="misoginia Pandora" loading="lazy" width="760" height="428"></span>
+        <h3>misoginia Pandora</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="short-films/#anhelo">
+        <span class="thumb"><img src="img/g/anhelo.jpg" alt="Anhelo" loading="lazy" width="760" height="428"></span>
+        <h3>Anhelo</h3>
+        <span class="marca">Watch now</span>
+      </a>
     </div>
   </section>
 
@@ -139,48 +104,36 @@
       <a class="ver" href="music-video/">Ver todos ↗</a>
     </div>
     <div class="grid">
-      <div class="work-item">
-        <button class="work" data-video="9D0kX6MR5pw">
-        <span class="thumb"><img src="img/g/oliver.jpg" alt="Oliver Aron – Mystery" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Oliver Aron – Mystery (Official Music Video)</h3><div class="meta">Dir. Oliver Aron</div>
-      </button>
-        <a class="ficha-link" href="music-video/#oliver">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="PRqKwPvexO4">
-        <span class="thumb"><img src="img/g/ramato.jpg" alt="Ramato / SUBE" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Ramato / SUBE</h3><div class="meta">Dir. David Legue</div>
-      </button>
-        <a class="ficha-link" href="music-video/#ramato">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="lBKFxea5Bzg">
-        <span class="thumb"><img src="img/g/alaire.jpg" alt="Al aire el río / SUBE" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Al aire el río / SUBE</h3><div class="meta">Winner · Animal and Environmental Film Festival, Mexico</div>
-      </button>
-        <a class="ficha-link" href="music-video/#al-aire">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="XGSSna10ifM">
-        <span class="thumb"><img src="img/g/miel.jpg" alt="Bueno pa la miel / Elías andré" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Bueno pa la miel / Elías andré</h3><div class="meta">Dir. Felipe Díaz Galarce</div>
-      </button>
-        <a class="ficha-link" href="music-video/#elias-andre">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="bd5ZEKltWM4">
-        <span class="thumb"><img src="img/g/cruza.jpg" alt="Cruza mis cielos / IVOLIER" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Cruza mis cielos / IVOLIER</h3><div class="meta">Dir. Ivolier &amp; Felipe Díaz Galarce</div>
-      </button>
-        <a class="ficha-link" href="music-video/#ivolier">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="TUz3l6raE_Q">
-        <span class="thumb"><img src="img/g/sol.jpg" alt="Ni un día más / SOL BUSTAMANTE" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>Ni un día más / SOL BUSTAMANTE</h3><div class="meta">Dir. Milca Galea</div>
-      </button>
-        <a class="ficha-link" href="music-video/#sol">Ficha completa ↗</a>
-      </div>
+      <a class="work" href="music-video/#oliver">
+        <span class="thumb"><img src="img/g/oliver.jpg" alt="Oliver Aron / Mystery" loading="lazy" width="760" height="428"></span>
+        <h3>Oliver Aron / Mystery</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="music-video/#ramato">
+        <span class="thumb"><img src="img/g/ramato.jpg" alt="SUBE / Ramato" loading="lazy" width="760" height="428"></span>
+        <h3>SUBE / Ramato</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="music-video/#al-aire">
+        <span class="thumb"><img src="img/g/alaire.jpg" alt="SUBE / Al aire el río" loading="lazy" width="760" height="428"></span>
+        <h3>SUBE / Al aire el río</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="music-video/#elias-andre">
+        <span class="thumb"><img src="img/g/miel.jpg" alt="Elías André / Bueno pa la miel" loading="lazy" width="760" height="428"></span>
+        <h3>Elías André / Bueno pa la miel</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="music-video/#ivolier">
+        <span class="thumb"><img src="img/g/cruza.jpg" alt="IVOLIER / Cruza mis cielos" loading="lazy" width="760" height="428"></span>
+        <h3>IVOLIER / Cruza mis cielos</h3>
+        <span class="marca">Watch now</span>
+      </a>
+      <a class="work" href="music-video/#sol">
+        <span class="thumb"><img src="img/g/sol.jpg" alt="Sol Bustamante / Ni un día más" loading="lazy" width="760" height="428"></span>
+        <h3>Sol Bustamante / Ni un día más</h3>
+        <span class="marca">Watch now</span>
+      </a>
     </div>
   </section>
 
@@ -191,40 +144,31 @@
       <a class="ver" href="work-in-progress/">Ver todos ↗</a>
     </div>
     <div class="grid">
-      <div class="work-item">
-        <button class="work" data-video="Puh4yDUtEyo">
-        <span class="thumb"><img src="img/g/medusa.jpg" alt="MEDUSA / WIP" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>MEDUSA / WIP</h3><div class="meta">Co production Chile — France</div>
-      </button>
-        <a class="ficha-link" href="work-in-progress/#medusa">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="sOBAO7SCWIc">
-        <span class="thumb"><img src="img/g/helix.jpg" alt="HELIX / WIP" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>HELIX / WIP</h3><div class="meta">In post-production</div>
-      </button>
-        <a class="ficha-link" href="work-in-progress/#helix">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="ELj1Lxpu4gc">
-        <span class="thumb"><img src="img/g/venus.jpg" alt="VENUS IN VITRO / WIP" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>VENUS IN VITRO / WIP</h3><div class="meta">In post-production</div>
-      </button>
-        <a class="ficha-link" href="work-in-progress/#venus">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="gQzG00K118A">
-        <span class="thumb"><img src="img/g/amateurs.jpg" alt="AMATEURS / WIP" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>AMATEURS / WIP</h3><div class="meta">In post-production</div>
-      </button>
-        <a class="ficha-link" href="work-in-progress/#amateurs">Ficha completa ↗</a>
-      </div>
-      <div class="work-item">
-        <button class="work" data-video="eUmAM2CKcyI">
-        <span class="thumb"><img src="img/g/elaire.jpg" alt="EL AIRE QUE ME DAS / WIP" loading="lazy" width="760" height="428"><span class="play"></span></span>
-        <h3>EL AIRE QUE ME DAS / WIP</h3><div class="meta">Work in progress</div>
-      </button>
-      </div>
+      <a class="work" href="work-in-progress/#medusa">
+        <span class="thumb"><img src="img/g/medusa.jpg" alt="Medusa of Stone" loading="lazy" width="760" height="428"></span>
+        <h3>Medusa of Stone</h3>
+        <span class="marca">Teaser</span>
+      </a>
+      <a class="work" href="work-in-progress/#helix">
+        <span class="thumb"><img src="img/g/helix.jpg" alt="Helix Evolution" loading="lazy" width="760" height="428"></span>
+        <h3>Helix Evolution</h3>
+        <span class="marca">Trailer</span>
+      </a>
+      <a class="work" href="work-in-progress/#venus">
+        <span class="thumb"><img src="img/g/venus.jpg" alt="Venus in Vitro" loading="lazy" width="760" height="428"></span>
+        <h3>Venus in Vitro</h3>
+        <span class="marca">Work in progress</span>
+      </a>
+      <a class="work" href="work-in-progress/#amateurs">
+        <span class="thumb"><img src="img/g/amateurs.jpg" alt="Amateurs" loading="lazy" width="760" height="428"></span>
+        <h3>Amateurs</h3>
+        <span class="marca">Trailer</span>
+      </a>
+      <a class="work" href="work-in-progress/#elaire">
+        <span class="thumb"><img src="img/g/elaire.jpg" alt="El aire que me das" loading="lazy" width="760" height="428"></span>
+        <h3>El aire que me das</h3>
+        <span class="marca">Work in progress</span>
+      </a>
     </div>
   </section>
 
@@ -267,6 +211,6 @@
 </main>
 
 <footer>© <span id="year">2026</span> dEUSeXmACHINA Films — Valparaíso, Chile</footer>
-<script src="script.js?v=10"></script>
+<script src="script.js?v=14"></script>
 </body>
 </html>

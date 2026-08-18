@@ -19,17 +19,25 @@
   }
 
   // Linea inferior de la cabecera al hacer scroll
+  // La cabecera se esconde al bajar y reaparece al devolver el scroll.
   var bar = document.querySelector("header");
   if (bar) {
+    var ultimo = 0;
     addEventListener("scroll", function () {
-      bar.classList.toggle("scrolled", scrollY > 10);
+      var y = scrollY;
+      if (y > 100 && y > ultimo + 4) {
+        bar.classList.add("oculta");                 // bajando: fuera
+      } else if (y < ultimo - 4 || y <= 100) {
+        bar.classList.remove("oculta");              // subiendo: vuelve
+      }
+      ultimo = y;
     }, { passive: true });
   }
 
   // Icono de play, inyectado para no repetir el SVG en cada ficha
-  var SVG = '<svg viewBox="0 0 68 48" aria-hidden="true">'
-          + '<path d="M66.5 7.7a8.6 8.6 0 0 0-6-6.1C55.2 0 34 0 34 0S12.8 0 7.5 1.6a8.6 8.6 0 0 0-6 6.1A90 90 0 0 0 0 24a90 90 0 0 0 1.5 16.3 8.6 8.6 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.7a8.6 8.6 0 0 0 6-6A90 90 0 0 0 68 24a90 90 0 0 0-1.5-16.3z" fill="#000" opacity=".55"/>'
-          + '<path d="M27 34V14l18 10z" fill="#fff"/></svg>';
+  var SVG = '<svg viewBox="0 0 64 64" aria-hidden="true">'
+          + '<circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>'
+          + '<path d="M27 23.5 L43 32 L27 40.5 Z" fill="currentColor"/></svg>';
 
   // Los videos se cargan solo al pulsarlos: la pagina no arranca con 17 iframes.
   function incrustar(caja, id, titulo) {
@@ -122,4 +130,32 @@
   var s = document.createElement("script");
   s.src = "https://www.youtube.com/iframe_api";
   document.head.appendChild(s);
+})();
+
+/* ---------------------------------------------------------------
+   DIA / NOCHE. Por defecto noche (el negro es la marca). La
+   eleccion se guarda para las siguientes visitas.
+--------------------------------------------------------------- */
+(function () {
+  "use strict";
+  var raiz = document.documentElement,
+      boton = document.querySelector(".tema");
+
+  function pintar(tema) {
+    if (tema === "dia") raiz.setAttribute("data-tema", "dia");
+    else raiz.removeAttribute("data-tema");
+    if (boton) boton.textContent = (tema === "dia") ? "Noche" : "Día";
+  }
+
+  var guardado = null;
+  try { guardado = localStorage.getItem("tema"); } catch (e) {}
+  pintar(guardado || "noche");
+
+  if (boton) {
+    boton.addEventListener("click", function () {
+      var nuevo = raiz.getAttribute("data-tema") === "dia" ? "noche" : "dia";
+      pintar(nuevo);
+      try { localStorage.setItem("tema", nuevo); } catch (e) {}
+    });
+  }
 })();
