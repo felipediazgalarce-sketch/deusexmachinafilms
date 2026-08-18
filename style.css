@@ -503,20 +503,53 @@ body::after{
   .portada .marco h3{font-size:clamp(1.3rem,6vw,2rem);}
 }
 
-/* ---------------- TAPA DEL REEL ---------------- */
-/* YouTube dibuja su play/pausa mientras el video arranca. Esta capa
-   lo cubre con el logo —solo la letra, el PNG es transparente— y se
-   desvanece en cuanto el reproductor confirma que esta reproduciendo. */
+/* ---------------- TARJETA DE ENTRADA DEL REEL ---------------- */
+/* Cubre el play/pausa que YouTube dibuja al arrancar. Panel gris
+   traslucido con los 33 laureles del sitio en diminuto y, al centro,
+   la marca en vectorial recorrida por una energia turquesa.
+   Aguanta 5 s desde que el video arranca y se funde. */
 .reel-tapa{
   position:absolute; inset:0; z-index:3; pointer-events:none;
   display:flex; align-items:center; justify-content:center;
-  /* sin fondo: solo la letra del logo, encima del signo de YouTube.
-     Aguanta 5 s despues de arrancar el video y luego se funde. */
-  opacity:1; transition:opacity .9s ease 5s;
-}
-.reel-tapa img{
-  width:92vw; max-width:none; height:auto;   /* cruza de lado a lado */
-  filter:drop-shadow(0 2px 26px rgba(0,0,0,.8));
+  opacity:1; transition:opacity 1s ease 5s;
 }
 .ratio.reel.reproduciendo .reel-tapa{opacity:0;}
-@media (max-width:860px){ .reel-tapa img{width:88vw;} }
+
+.tarjeta{
+  position:relative; display:grid; place-items:center;
+  width:min(560px,74vw); aspect-ratio:1;
+  background:rgba(150,150,150,.14);
+  backdrop-filter:blur(3px) saturate(.7);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+/* los 33 laureles, muy pequenos, como marca de agua */
+.laureles-mini{
+  position:absolute; inset:26px;
+  display:grid; grid-template-columns:repeat(6,1fr); gap:2px;
+  place-content:center; opacity:.3; color:#fff;
+}
+.lm{display:flex; justify-content:center;}
+.lm svg{width:26px; height:26px;}
+.lm svg:last-child{transform:scaleX(-1);}
+
+/* el sello al centro, recorrido por la energia turquesa.
+   OJO: no llamarlo .marca — esa clase ya es la etiqueta "Watch now"
+   de la portada y lleva margin-top:auto, que lo tiraba al fondo. */
+.tarjeta .sello{
+  position:relative; z-index:2; width:78%; display:block;
+}
+.marca-svg{width:100%; height:auto; display:block;
+  filter:drop-shadow(0 2px 16px rgba(0,0,0,.55));}
+#energia{animation:energia 2.6s linear infinite;}
+@keyframes energia{
+  from{transform:translateX(-1);}
+  to  {transform:translateX(1);}
+}
+
+@media (max-width:860px){
+  .tarjeta{width:min(340px,82vw);}
+  .laureles-mini{inset:16px; grid-template-columns:repeat(5,1fr);}
+  .lm svg{width:19px; height:19px;}
+}
+@media (prefers-reduced-motion:reduce){ #energia{animation:none;} }
