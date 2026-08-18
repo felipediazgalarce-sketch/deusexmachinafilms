@@ -77,3 +77,49 @@
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* ---------------------------------------------------------------
+   REEL DE PORTADA con la API de YouTube.
+   Un iframe normal muestra los controles centrales (play/pausa,
+   avanzar, retroceder) en cuanto el video se pausa o se queda
+   cargando. Con la API el reproductor se reanuda solo, asi que
+   nunca entra en ese estado y esa interfaz no llega a dibujarse.
+   Es lo mismo que hacia el sitio anterior con RevSlider.
+--------------------------------------------------------------- */
+(function () {
+  "use strict";
+  var caja = document.getElementById("reel");
+  if (!caja) return;                       // solo existe en la portada
+
+  var ID = "5Xr_eElt6vE", player = null;
+
+  window.onYouTubeIframeAPIReady = function () {
+    player = new YT.Player("reel", {
+      videoId: ID,
+      host: "https://www.youtube-nocookie.com",
+      playerVars: {
+        autoplay: 1, mute: 1, controls: 0,
+        disablekb: 1, fs: 0, rel: 0, modestbranding: 1,
+        iv_load_policy: 3, playsinline: 1
+      },
+      events: {
+        onReady: function (e) { e.target.mute(); e.target.playVideo(); },
+        onStateChange: function (e) {
+          // si se pausa o termina, volver a reproducir de inmediato:
+          // asi YouTube no llega a dibujar los controles centrales
+          if (e.data === YT.PlayerState.ENDED) {
+            // bucle sin usar 'playlist': con lista, YouTube dibuja
+            // los botones de anterior/siguiente en el centro
+            e.target.seekTo(0); e.target.playVideo();
+          } else if (e.data === YT.PlayerState.PAUSED) {
+            e.target.playVideo();
+          }
+        }
+      }
+    });
+  };
+
+  var s = document.createElement("script");
+  s.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(s);
+})();
