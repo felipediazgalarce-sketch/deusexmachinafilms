@@ -1,0 +1,184 @@
+/* dEUSeXmACHINA films — hoja de estilos comun a las 6 paginas */
+
+:root{
+  --bg:#000;
+  --bg-2:#0d0d0d;
+  --line:#242424;
+  --text:#f4f4f4;
+  --dim:#9b9b9b;
+  --dim-2:#6f6f6f;
+  --accent:#c9a227;
+  --max:1180px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%; height:auto; display:block;}
+a{color:inherit;}
+
+.skip{position:absolute; left:-9999px;}
+.skip:focus{left:12px; top:12px; z-index:999; background:#fff; color:#000; padding:8px 14px;}
+
+/* ---------------- CABECERA ---------------- */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 30px; background:rgba(0,0,0,.86); backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent; transition:border-color .3s;
+}
+header.scrolled{border-bottom-color:var(--line);}
+.logo img{height:24px; width:auto;}
+nav ul{display:flex; gap:24px; list-style:none;}
+nav a{
+  font-size:.7rem; letter-spacing:.17em; text-transform:uppercase;
+  text-decoration:none; color:var(--dim); transition:color .2s;
+}
+nav a:hover,nav a:focus-visible{color:var(--text);}
+nav a.actual{color:var(--text); border-bottom:1px solid var(--accent); padding-bottom:3px;}
+.burger{display:none; background:none; border:0; cursor:pointer; padding:6px;}
+.burger span{display:block; width:22px; height:1.5px; background:var(--text); margin:5px 0;}
+
+/* ---------------- BLOQUES DE VIDEO ---------------- */
+.ratio{position:relative; width:100%; padding-top:56.25%; background:#000; overflow:hidden;}
+.ratio iframe,.ratio img{position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover;}
+.ratio[data-video]{cursor:pointer;}
+.play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;}
+.play svg{width:60px; height:60px; filter:drop-shadow(0 2px 12px rgba(0,0,0,.7)); transition:transform .3s;}
+.ratio:hover .play svg,.work:hover .play svg{transform:scale(1.12);}
+
+/* ---------------- ENCABEZADO DE PAGINA ---------------- */
+.page-head{max-width:var(--max); margin:0 auto; padding:126px 30px 0;}
+.page-head h1{
+  font-size:clamp(1.9rem,4.4vw,3rem); font-weight:600; letter-spacing:.01em; line-height:1.1;
+}
+.page-head .sub{color:var(--dim); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; margin-top:12px;}
+
+main{max-width:var(--max); margin:0 auto; padding:0 30px 40px;}
+section{padding:64px 0; scroll-margin-top:66px;}
+.sec-head{
+  display:flex; align-items:baseline; gap:14px; margin-bottom:30px;
+  border-bottom:1px solid var(--line); padding-bottom:12px;
+}
+.sec-head h2{font-size:1.35rem; font-weight:600; letter-spacing:.02em;}
+.sec-head .count{font-size:.7rem; color:var(--dim-2); letter-spacing:.14em;}
+.sec-head .ver{margin-left:auto; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); text-decoration:none;}
+.sec-head .ver:hover{color:var(--text);}
+
+/* ---------------- FICHA COMPLETA DE OBRA ---------------- */
+.obra{padding:52px 0; border-bottom:1px solid var(--line);}
+.obra:last-child{border-bottom:0;}
+.obra h2{font-size:clamp(1.4rem,2.8vw,2rem); font-weight:600; line-height:1.15; margin-bottom:6px;}
+.obra .alt{color:var(--dim); font-size:1rem; font-style:italic; margin-bottom:20px;}
+.obra .ratio{margin-bottom:24px; border:1px solid var(--line);}
+.obra .sinopsis{font-size:1.03rem; color:#dcdcdc; max-width:74ch; margin-bottom:22px;}
+.ficha{display:flex; flex-wrap:wrap; gap:10px 26px; margin-bottom:24px;}
+.ficha span{
+  font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--dim);
+  border:1px solid var(--line); padding:5px 12px;
+}
+.creditos{
+  display:grid; grid-template-columns:200px 1fr; gap:8px 26px;
+  font-size:.9rem; color:var(--dim); max-width:88ch;
+}
+.creditos dt{color:var(--text); font-weight:500;}
+.creditos dd{margin:0;}
+.festivales{margin-top:28px;}
+.festivales h3{
+  font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent); margin-bottom:12px;
+}
+.festivales ul{list-style:none; columns:2; column-gap:34px;}
+.festivales li{font-size:.88rem; color:var(--dim); padding:3px 0; break-inside:avoid;}
+.festivales li.premio{color:var(--text);}
+.festivales li.premio::before{content:"★ "; color:var(--accent);}
+
+/* ---------------- GRILLA (portada) ---------------- */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:24px;}
+.work{background:none; border:0; padding:0; text-align:left; color:inherit; font:inherit; cursor:pointer; width:100%; display:block; text-decoration:none;}
+.thumb{position:relative; overflow:hidden; background:#000; border:1px solid var(--line);}
+.thumb img{width:100%; aspect-ratio:16/10; object-fit:cover; transition:transform .5s ease,opacity .3s;}
+.work:hover .thumb img,.work:focus-visible .thumb img{transform:scale(1.045); opacity:.72;}
+.work h3{margin-top:11px; font-size:.96rem; font-weight:500; line-height:1.35;}
+.work .meta{font-size:.72rem; color:var(--dim-2); letter-spacing:.08em; margin-top:3px;}
+
+/* ---------------- DESTACADO ---------------- */
+.featured{background:var(--bg-2); border:1px solid var(--line);}
+.featured .body{padding:26px 28px 30px;}
+.tag{
+  display:inline-block; font-size:.62rem; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--accent); border:1px solid var(--accent); padding:3px 11px; margin-bottom:14px;
+}
+.featured h2{font-size:clamp(1.5rem,3vw,2.1rem); font-weight:600; margin-bottom:14px;}
+.featured .sinopsis{margin-bottom:22px;}
+
+/* ---------------- ABOUT ---------------- */
+.about{display:grid; grid-template-columns:210px 1fr; gap:42px; align-items:start;}
+.about-foto{border:1px solid var(--line);}
+.about .cargo{font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--dim-2); margin-top:10px;}
+.about p{margin-bottom:15px; color:var(--dim); max-width:74ch;}
+.about p.lead{color:var(--text); font-size:1.14rem; line-height:1.5; margin-bottom:24px;}
+.about strong{color:var(--text); font-weight:500;}
+
+/* ---------------- CONTACTO ---------------- */
+.contacto{text-align:center; padding:20px 0 40px;}
+.contacto p{color:var(--dim); max-width:62ch; margin:0 auto 26px;}
+.mail{
+  display:inline-block; font-size:clamp(1rem,2.4vw,1.35rem); text-decoration:none;
+  border-bottom:1px solid var(--accent); padding-bottom:5px; word-break:break-word;
+}
+.mail:hover{color:var(--accent);}
+.socials{display:flex; justify-content:center; flex-wrap:wrap; gap:24px; margin-top:32px;}
+.socials a{font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); text-decoration:none;}
+.socials a:hover{color:var(--text);}
+
+footer{
+  border-top:1px solid var(--line); text-align:center;
+  padding:30px; font-size:.7rem; color:var(--dim-2); letter-spacing:.1em;
+}
+
+/* ---------------- MOVIL ---------------- */
+@media (max-width:860px){
+  header{padding:13px 18px;}
+  .burger{display:block;}
+  nav{position:fixed; inset:52px 0 auto 0; background:rgba(0,0,0,.97); border-bottom:1px solid var(--line); display:none;}
+  nav.open{display:block;}
+  nav ul{flex-direction:column; gap:0; padding:6px 18px 16px;}
+  nav a{display:block; padding:13px 0; font-size:.8rem;}
+  nav a.actual{border-bottom:0; color:var(--accent);}
+  .page-head{padding:96px 18px 0;}
+  main{padding:0 18px 30px;}
+  section{padding:44px 0;}
+  .obra{padding:38px 0;}
+  .grid{grid-template-columns:1fr;}
+  .creditos{grid-template-columns:1fr; gap:2px;}
+  .creditos dt{margin-top:12px;}
+  .festivales ul{columns:1;}
+  .about{grid-template-columns:1fr; gap:24px;}
+  .about-foto{max-width:180px;}
+  .featured .body{padding:20px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{transition:none !important; animation:none !important;}
+}
+
+/* ---------------- ENLACE A FICHA COMPLETA (portada) ---------------- */
+.work-item{display:flex; flex-direction:column;}
+.work-item .work{flex:1;}
+.ficha-link{
+  display:inline-block; margin-top:8px; align-self:flex-start;
+  font-size:.68rem; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--dim-2); text-decoration:none;
+  border-bottom:1px solid transparent; padding-bottom:2px; transition:color .2s,border-color .2s;
+}
+.ficha-link:hover,.ficha-link:focus-visible{color:var(--accent); border-bottom-color:var(--accent);}
+
+/* Resalta la obra a la que se acaba de saltar desde la portada */
+.obra:target{background:rgba(201,162,39,.05); box-shadow:-18px 0 0 rgba(201,162,39,.35); }
