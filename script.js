@@ -115,6 +115,11 @@
       events: {
         onReady: function (e) { e.target.mute(); e.target.playVideo(); },
         onStateChange: function (e) {
+          // en cuanto reproduce de verdad, se retira la tapa del logo
+          if (e.data === YT.PlayerState.PLAYING) {
+            var c = document.getElementById("reel-caja");
+            if (c) c.classList.add("reproduciendo");
+          }
           // si se pausa o termina, volver a reproducir de inmediato:
           // asi YouTube no llega a dibujar los controles centrales
           if (e.data === YT.PlayerState.ENDED) {
