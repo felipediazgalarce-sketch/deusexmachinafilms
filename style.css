@@ -510,12 +510,13 @@ body::after{
 .reel-tapa{
   position:absolute; inset:0; z-index:3; pointer-events:none;
   display:flex; align-items:center; justify-content:center;
-  /* sin fondo: solo la letra del logo, encima del signo de YouTube */
-  opacity:1; transition:opacity .55s ease;
+  /* sin fondo: solo la letra del logo, encima del signo de YouTube.
+     Aguanta 5 s despues de arrancar el video y luego se funde. */
+  opacity:1; transition:opacity .9s ease 5s;
 }
 .reel-tapa img{
-  width:min(300px,38vw); height:auto;
-  filter:drop-shadow(0 1px 18px rgba(0,0,0,.75));
+  width:92vw; max-width:none; height:auto;   /* cruza de lado a lado */
+  filter:drop-shadow(0 2px 26px rgba(0,0,0,.8));
 }
 .ratio.reel.reproduciendo .reel-tapa{opacity:0;}
-@media (max-width:860px){ .reel-tapa img{width:min(210px,54vw);} }
+@media (max-width:860px){ .reel-tapa img{width:88vw;} }
