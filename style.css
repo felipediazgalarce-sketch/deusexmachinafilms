@@ -235,3 +235,24 @@ footer{
   html{scroll-behavior:auto;}
   *,*::before,*::after{transition:none !important; animation:none !important;}
 }
+
+/* =================================================================
+   TITULARES ESTILO A24
+   A24 usa Akzidenz-Grotesk Extended / NB International: grotesca de
+   letras ANCHAS, peso medio y tracking normal — no versales
+   espaciadas. Archivo con font-stretch:125% es su equivalente libre.
+   El resto del sitio (fichas, creditos, rotulos) sigue en Jost.
+   ================================================================= */
+.page-head h1,
+.obra h2,
+.featured h2,
+.work h3{
+  font-family:"Archivo","Archivo Expanded",var(--font);
+  font-stretch:125%;
+  font-weight:500;
+  letter-spacing:-.01em;
+}
+.page-head h1{font-size:clamp(2.6rem,7.4vw,6rem); line-height:.94; font-weight:600;}
+.obra h2{font-size:clamp(2rem,5.4vw,4.2rem); line-height:.96; margin-bottom:18px;}
+.featured h2{font-size:clamp(2.1rem,5.8vw,4.6rem); line-height:.94;}
+.work h3{font-size:1.02rem; line-height:1.22; letter-spacing:0; font-weight:500;}
