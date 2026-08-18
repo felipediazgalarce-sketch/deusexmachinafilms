@@ -182,3 +182,21 @@ footer{
 
 /* Resalta la obra a la que se acaba de saltar desde la portada */
 .obra:target{background:rgba(201,162,39,.05); box-shadow:-18px 0 0 rgba(201,162,39,.35); }
+
+/* ---------------- REEL DE PORTADA COMO FONDO ---------------- */
+/* Objetivo: reel de fondo sin titulo, sin barra de tiempo, sin botones.
+   - controls=0 y pointer-events:none quitan lo interactivo.
+   - Pero YouTube dibuja igual el titulo arriba y sus botones abajo.
+     Para taparlos se agranda el iframe EN LAS DOS DIMENSIONES por igual:
+     asi conserva el 16:9 (nada de franjas negras) y esa interfaz queda
+     fuera del recuadro visible, que tiene overflow:hidden.
+   - Escalar solo una dimension NO sirve: YouTube encaja el video dentro
+     y aparecen franjas negras. */
+.ratio.reel{background:#000;}
+.ratio.reel iframe{
+  pointer-events:none;
+  inset:auto;
+  top:50%; left:50%;
+  width:134%; height:134%;
+  transform:translate(-50%,-50%);
+}
