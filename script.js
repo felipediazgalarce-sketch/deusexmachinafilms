@@ -36,8 +36,10 @@
 
   // Icono de play, inyectado para no repetir el SVG en cada ficha
   var SVG = '<svg viewBox="0 0 64 64" aria-hidden="true">'
-          + '<circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>'
-          + '<path d="M27 23.5 L43 32 L27 40.5 Z" fill="currentColor"/></svg>';
+          + '<circle class="aro" cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="1"/>'
+          + '<circle class="luz" cx="32" cy="32" r="24" fill="none" stroke-width="1.4"'
+          + ' transform="rotate(-90 32 32)"/>'
+          + '<path class="punta" d="M27 23.5 L43 32 L27 40.5 Z" fill="currentColor"/></svg>';
 
   // Los videos se cargan solo al pulsarlos: la pagina no arranca con 17 iframes.
   function incrustar(caja, id, titulo) {
