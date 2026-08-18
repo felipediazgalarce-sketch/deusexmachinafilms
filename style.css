@@ -293,3 +293,88 @@ footer{
   .laurel{grid-template-columns:auto minmax(84px,132px) auto;}
   .laurel svg{width:42px; height:42px;}
 }
+
+/* ---------------- TITULO DENTRO DEL FOTOGRAMA ---------------- */
+/* Como A24: caja mixta (NO versales), anchura normal (NO estirada),
+   peso alto, apoyado abajo a la izquierda sobre un degradado que
+   garantiza la lectura encima de cualquier imagen. */
+.marco{
+  position:absolute; inset:auto 0 0 0; z-index:2;
+  display:block; padding:0 0 46px;
+  background:linear-gradient(to top,
+    rgba(0,0,0,.88) 0%, rgba(0,0,0,.62) 38%, rgba(0,0,0,.16) 72%, transparent 100%);
+  pointer-events:none;
+}
+.marco > *{
+  max-width:var(--max); margin-left:auto; margin-right:auto;
+  padding-left:40px; padding-right:40px;
+}
+.marco-tipo{
+  display:block; font-size:.6rem; font-weight:400; text-transform:uppercase;
+  letter-spacing:.24em; color:rgba(255,255,255,.72); margin-bottom:14px;
+}
+.marco h2{
+  font-weight:600;                 /* grueso */
+  text-transform:none;             /* caja mixta */
+  font-stretch:normal;             /* sin estirar */
+  letter-spacing:-.018em;
+  font-size:clamp(1.9rem,5vw,4.2rem);
+  line-height:1.02;
+  margin:0;
+  text-shadow:0 2px 30px rgba(0,0,0,.5);
+}
+.marco .alt{
+  margin:12px 0 0; font-size:.9rem; font-weight:300; font-style:italic;
+  color:rgba(255,255,255,.6);
+}
+/* el play se aparta del titulo: sube al centro-alto del fotograma */
+.obra .ratio .play,.featured .ratio .play{align-items:center; padding-bottom:70px;}
+
+@media (max-width:860px){
+  .marco{padding-bottom:26px;}
+  .marco > *{padding-left:22px; padding-right:22px;}
+  .marco-tipo{font-size:.56rem; margin-bottom:9px;}
+  .marco h2{font-size:clamp(1.4rem,6.4vw,2.2rem); letter-spacing:-.012em;}
+  .marco .alt{font-size:.78rem; margin-top:8px;}
+  .obra .ratio .play,.featured .ratio .play{padding-bottom:40px;}
+}
+
+/* ---------------- TITULO DENTRO DEL FOTOGRAMA ---------------- */
+/* Como A24: caja mixta (NO versales), anchura normal (NO estirada),
+   peso alto. Apoyado abajo a la izquierda sobre un degradado que
+   asegura la lectura encima de cualquier imagen. */
+.marco{
+  position:absolute; inset:auto 0 0 0; z-index:2;
+  display:block; padding:0 0 46px; pointer-events:none;
+  background:linear-gradient(to top,
+    rgba(0,0,0,.88) 0%, rgba(0,0,0,.6) 38%, rgba(0,0,0,.15) 72%, transparent 100%);
+}
+.marco > *{max-width:var(--max); margin:0 auto; padding:0 40px;}
+.marco-tipo{
+  display:block; font-size:.6rem; font-weight:400; text-transform:uppercase;
+  letter-spacing:.24em; color:rgba(255,255,255,.72); margin-bottom:14px;
+}
+.marco h2{
+  font-weight:600;          /* grueso */
+  text-transform:none;      /* caja mixta, con minusculas */
+  font-stretch:normal;      /* sin estirar */
+  letter-spacing:-.018em;
+  font-size:clamp(1.9rem,5vw,4.2rem);
+  line-height:1.02; margin:0;
+  text-shadow:0 2px 30px rgba(0,0,0,.55);
+}
+.marco .alt{
+  margin:12px auto 0; font-size:.9rem; font-weight:300; font-style:italic;
+  color:rgba(255,255,255,.6);
+}
+/* el play sube para no chocar con el titulo */
+.obra .ratio .play,.featured .ratio .play{align-items:center; padding-bottom:80px;}
+
+@media (max-width:860px){
+  .marco{padding-bottom:24px;}
+  .marco > *{padding:0 22px;}
+  .marco-tipo{font-size:.55rem; margin-bottom:9px; letter-spacing:.2em;}
+  .marco h2{font-size:clamp(1.35rem,6.6vw,2.1rem); letter-spacing:-.01em;}
+  .marco .alt{font-size:.76rem; margin-top:7px;}
+  .obra .ratio .play,.featured .ratio .play{padding-bottom:44px;}
+}
