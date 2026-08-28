@@ -519,16 +519,19 @@ body::after{
 .sello{display:block; width:min(620px,64vw);}
 .marca-svg{width:100%; height:auto; display:block;}
 
-/* La luz recorre la palabra una sola vez y se detiene al final.
-   Arranca cuando el reproductor confirma que esta reproduciendo,
-   para que los 5 s de la luz y los 5 s del negro vayan a la par. */
-#energia{transform:translateX(-1);}
-.ratio.reel.reproduciendo #energia{
-  animation:energia 5s linear forwards;
+/* La luz recorre la palabra una sola vez, en 5 s, y termina justo
+   cuando el negro se abre a las imagenes.
+   OJO: NO se puede animar 'transform' de CSS sobre un <linearGradient>
+   —los navegadores no lo aplican ahi—. Por eso la luz es un <rect>
+   normal que viaja bajo una mascara con la forma de las letras:
+   eso si se anima, y ademas es medible. */
+.luz{transform:translateX(0);}
+.ratio.reel.reproduciendo .luz{
+  animation:barrido 5s cubic-bezier(.35,0,.25,1) forwards;
 }
-@keyframes energia{
-  from{transform:translateX(-1);}
-  to  {transform:translateX(1);}
+@keyframes barrido{
+  from{transform:translateX(0);}      /* la banda empieza fuera, a la izquierda */
+  to  {transform:translateX(966px);}  /* 666 del logo + 300 de banda */
 }
 
 @media (max-width:860px){ .sello{width:80vw;} }
