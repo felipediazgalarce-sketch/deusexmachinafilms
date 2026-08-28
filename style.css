@@ -503,53 +503,35 @@ body::after{
   .portada .marco h3{font-size:clamp(1.3rem,6vw,2rem);}
 }
 
-/* ---------------- TARJETA DE ENTRADA DEL REEL ---------------- */
-/* Cubre el play/pausa que YouTube dibuja al arrancar. Panel gris
-   traslucido con los 33 laureles del sitio en diminuto y, al centro,
-   la marca en vectorial recorrida por una energia turquesa.
-   Aguanta 5 s desde que el video arranca y se funde. */
+/* ---------------- ENTRADA DEL REEL ---------------- */
+/* Negro pleno mientras el video arranca: asi tapa por completo el
+   play/pausa de YouTube (la transparencia no servia sobre el video).
+   La marca va al centro y una luz turquesa la recorre UNA vez, en
+   5 s, terminando justo cuando el negro se abre a las imagenes. */
 .reel-tapa{
   position:absolute; inset:0; z-index:3; pointer-events:none;
   display:flex; align-items:center; justify-content:center;
-  opacity:1; transition:opacity 1s ease 5s;
+  background:#000;
+  opacity:1; transition:opacity .9s ease 5s;
 }
 .ratio.reel.reproduciendo .reel-tapa{opacity:0;}
 
-.tarjeta{
-  position:relative; display:grid; place-items:center;
-  width:min(560px,74vw); aspect-ratio:1;
-  background:rgba(150,150,150,.14);
-  backdrop-filter:blur(3px) saturate(.7);
-  border:1px solid rgba(255,255,255,.1);
-}
+.sello{display:block; width:min(620px,64vw);}
+.marca-svg{width:100%; height:auto; display:block;}
 
-/* los 33 laureles, muy pequenos, como marca de agua */
-.laureles-mini{
-  position:absolute; inset:26px;
-  display:grid; grid-template-columns:repeat(6,1fr); gap:2px;
-  place-content:center; opacity:.3; color:#fff;
+/* La luz recorre la palabra una sola vez y se detiene al final.
+   Arranca cuando el reproductor confirma que esta reproduciendo,
+   para que los 5 s de la luz y los 5 s del negro vayan a la par. */
+#energia{transform:translateX(-1);}
+.ratio.reel.reproduciendo #energia{
+  animation:energia 5s linear forwards;
 }
-.lm{display:flex; justify-content:center;}
-.lm svg{width:26px; height:26px;}
-.lm svg:last-child{transform:scaleX(-1);}
-
-/* el sello al centro, recorrido por la energia turquesa.
-   OJO: no llamarlo .marca — esa clase ya es la etiqueta "Watch now"
-   de la portada y lleva margin-top:auto, que lo tiraba al fondo. */
-.tarjeta .sello{
-  position:relative; z-index:2; width:78%; display:block;
-}
-.marca-svg{width:100%; height:auto; display:block;
-  filter:drop-shadow(0 2px 16px rgba(0,0,0,.55));}
-#energia{animation:energia 2.6s linear infinite;}
 @keyframes energia{
   from{transform:translateX(-1);}
   to  {transform:translateX(1);}
 }
 
-@media (max-width:860px){
-  .tarjeta{width:min(340px,82vw);}
-  .laureles-mini{inset:16px; grid-template-columns:repeat(5,1fr);}
-  .lm svg{width:19px; height:19px;}
+@media (max-width:860px){ .sello{width:80vw;} }
+@media (prefers-reduced-motion:reduce){
+  .ratio.reel.reproduciendo #energia{animation:none;}
 }
-@media (prefers-reduced-motion:reduce){ #energia{animation:none;} }
