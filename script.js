@@ -103,6 +103,24 @@
 
   var ID = "5Xr_eElt6vE", player = null;
 
+  /* El play reaparecia en cada vuelta porque el video LLEGABA al final:
+     al entrar en estado "terminado", YouTube dibuja su interfaz dentro
+     del iframe, donde el CSS de fuera no alcanza.
+     Solucion: no dejarlo terminar. Se vigila el tiempo y se rebobina
+     medio segundo antes del final, de modo que el reproductor nunca
+     sale del estado "reproduciendo" y no llega a dibujar nada. */
+  var vigilante = null;
+  function vigilarFinal(p) {
+    if (vigilante) return;
+    vigilante = setInterval(function () {
+      try {
+        var dur = p.getDuration(), t = p.getCurrentTime();
+        if (!dur || dur < 1) return;              // aun sin metadatos
+        if (t >= dur - 0.5) p.seekTo(0.05, true); // rebobina antes del final
+      } catch (e) { /* el reproductor aun no responde */ }
+    }, 200);
+  }
+
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player("reel", {
       videoId: ID,
@@ -113,19 +131,19 @@
         iv_load_policy: 3, playsinline: 1
       },
       events: {
-        onReady: function (e) { e.target.mute(); e.target.playVideo(); },
+        onReady: function (e) {
+          e.target.mute(); e.target.playVideo(); vigilarFinal(e.target);
+        },
         onStateChange: function (e) {
           // en cuanto reproduce de verdad, se retira la tapa del logo
           if (e.data === YT.PlayerState.PLAYING) {
             var c = document.getElementById("reel-caja");
             if (c) c.classList.add("reproduciendo");
+            vigilarFinal(e.target);
           }
-          // si se pausa o termina, volver a reproducir de inmediato:
-          // asi YouTube no llega a dibujar los controles centrales
+          // red de seguridad por si aun asi termina o alguien lo pausa
           if (e.data === YT.PlayerState.ENDED) {
-            // bucle sin usar 'playlist': con lista, YouTube dibuja
-            // los botones de anterior/siguiente en el centro
-            e.target.seekTo(0); e.target.playVideo();
+            e.target.seekTo(0.05, true); e.target.playVideo();
           } else if (e.data === YT.PlayerState.PAUSED) {
             e.target.playVideo();
           }
