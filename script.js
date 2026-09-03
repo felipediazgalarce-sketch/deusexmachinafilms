@@ -156,31 +156,3 @@
   s.src = "https://www.youtube.com/iframe_api";
   document.head.appendChild(s);
 })();
-
-/* ---------------------------------------------------------------
-   DIA / NOCHE. Por defecto noche (el negro es la marca). La
-   eleccion se guarda para las siguientes visitas.
---------------------------------------------------------------- */
-(function () {
-  "use strict";
-  var raiz = document.documentElement,
-      boton = document.querySelector(".tema");
-
-  function pintar(tema) {
-    if (tema === "dia") raiz.setAttribute("data-tema", "dia");
-    else raiz.removeAttribute("data-tema");
-    if (boton) boton.textContent = (tema === "dia") ? "Noche" : "Día";
-  }
-
-  var guardado = null;
-  try { guardado = localStorage.getItem("tema"); } catch (e) {}
-  pintar(guardado || "noche");
-
-  if (boton) {
-    boton.addEventListener("click", function () {
-      var nuevo = raiz.getAttribute("data-tema") === "dia" ? "noche" : "dia";
-      pintar(nuevo);
-      try { localStorage.setItem("tema", nuevo); } catch (e) {}
-    });
-  }
-})();

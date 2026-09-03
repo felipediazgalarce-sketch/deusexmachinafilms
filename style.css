@@ -13,38 +13,22 @@
    ================================================================= */
 
 :root{
-  /* ---- NOCHE (por defecto) ---- */
-  --bg:#000;
-  --bg-2:#0a0a0a;
-  --line:#1c1c1c;
-  --line-2:#2e2e2e;
-  --text:#fff;
-  --dim:#8f8f8f;
-  --dim-2:#5e5e5e;
-  --cuerpo:#d5d5d5;          /* texto de lectura: sinopsis y creditos */
-  --barra:rgba(0,0,0,.8);    /* fondo de la cabecera */
-  --acento:#3ddbcb;          /* turquesa: destaca letras y lineas */
+  /* Tema unico, claro. Blanco roto como A24 (#eeeeee), no blanco puro:
+     no deslumbra y deja respirar las imagenes. */
+  --bg:#eeecea;
+  --bg-2:#e5e3e0;
+  --line:#d8d5d2;
+  --line-2:#bfbbb7;
+  --text:#0a0a0a;
+  --dim:#3a3a3a;
+  --dim-2:#6b6763;
+  --cuerpo:#141414;
+  --barra:rgba(238,236,234,.88);
+  --acento:#0d9488;          /* turquesa profundo, legible sobre claro */
 
   --font:"Jost",-apple-system,BlinkMacSystemFont,"Futura","Century Gothic",sans-serif;
   --max:1240px;
 }
-
-/* ---- DIA ---- */
-:root[data-tema="dia"]{
-  --bg:#fff;
-  --bg-2:#f6f6f6;
-  --line:#e5e5e5;
-  --line-2:#cfcfcf;
-  --text:#000;
-  --dim:#000;
-  --dim-2:#3d3d3d;
-  --cuerpo:#141414;
-  --barra:rgba(255,255,255,.86);
-  --acento:#0d9488;          /* turquesa mas profundo: contrasta sobre blanco */
-}
-
-/* transicion suave al cambiar de tema */
-body,header,footer{transition:background-color .35s,color .35s,border-color .35s;}
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -443,17 +427,6 @@ header.oculta{transform:translateY(-100%);}
 .marco{color:#fff;}
 .marco h2{color:#fff;}
 
-/* ---------------- CONMUTADOR DIA / NOCHE ---------------- */
-.tema{
-  background:none; border:0; cursor:pointer; padding:6px 0; margin-left:30px;
-  font-family:inherit; font-size:.62rem; font-weight:400; text-transform:uppercase;
-  letter-spacing:.19em; color:var(--dim-2); transition:color .25s; white-space:nowrap;
-}
-.tema:hover,.tema:focus-visible{color:var(--acento);}
-@media (max-width:860px){
-  .tema{margin:0; padding:16px 0; display:block; width:100%; text-align:left; font-size:.72rem;}
-}
-
 /* ---------------- GRANO DE PELICULA ---------------- */
 /* Textura de emulsion sobre todo el sitio. Ruido generado por SVG
    (feTurbulence): sin imagenes, pesa unos bytes. La capa se desplaza
@@ -461,8 +434,8 @@ header.oculta{transform:translateY(-100%);}
 body::after{
   content:""; position:fixed; inset:-120px; z-index:900; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.55'/%3E%3C/svg%3E");
-  opacity:.055;
-  mix-blend-mode:overlay;
+  opacity:.035;
+  mix-blend-mode:multiply;
   animation:grano 800ms steps(1) infinite;
   will-change:transform;
 }
@@ -475,8 +448,6 @@ body::after{
   100%{transform:translate(0,0);}
 }
 /* en dia el grano necesita menos fuerza para no ensuciar el blanco */
-:root[data-tema="dia"] body::after{opacity:.035; mix-blend-mode:multiply;}
-
 @media (prefers-reduced-motion:reduce){
   body::after{animation:none;}
 }
