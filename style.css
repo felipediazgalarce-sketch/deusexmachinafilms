@@ -476,38 +476,4 @@ body::after{
   .portada .marco h3{font-size:clamp(1.3rem,6vw,2rem);}
 }
 
-/* ---------------- ENTRADA DEL REEL ---------------- */
-/* Negro pleno mientras el video arranca: asi tapa por completo el
-   play/pausa de YouTube (la transparencia no servia sobre el video).
-   La marca va al centro y una luz turquesa la recorre UNA vez, en
-   5 s, terminando justo cuando el negro se abre a las imagenes. */
-.reel-tapa{
-  position:absolute; inset:0; z-index:3; pointer-events:none;
-  display:flex; align-items:center; justify-content:center;
-  background:#000;
-  opacity:1; transition:opacity .9s ease 5s;
-}
-.ratio.reel.reproduciendo .reel-tapa{opacity:0;}
 
-.sello{display:block; width:min(620px,64vw);}
-.marca-svg{width:100%; height:auto; display:block;}
-
-/* La luz recorre la palabra una sola vez, en 5 s, y termina justo
-   cuando el negro se abre a las imagenes.
-   OJO: NO se puede animar 'transform' de CSS sobre un <linearGradient>
-   —los navegadores no lo aplican ahi—. Por eso la luz es un <rect>
-   normal que viaja bajo una mascara con la forma de las letras:
-   eso si se anima, y ademas es medible. */
-.luz{transform:translateX(0);}
-.ratio.reel.reproduciendo .luz{
-  animation:barrido 5s cubic-bezier(.35,0,.25,1) forwards;
-}
-@keyframes barrido{
-  from{transform:translateX(0);}      /* la banda empieza fuera, a la izquierda */
-  to  {transform:translateX(966px);}  /* 666 del logo + 300 de banda */
-}
-
-@media (max-width:860px){ .sello{width:80vw;} }
-@media (prefers-reduced-motion:reduce){
-  .ratio.reel.reproduciendo #energia{animation:none;}
-}
