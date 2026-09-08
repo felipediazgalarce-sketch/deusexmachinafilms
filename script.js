@@ -88,3 +88,51 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
+
+/* ============ IDIOMA: ingles <-> español ============
+   El sitio se escribe en ingles. La traduccion vive en traduccion.js,
+   como pares "frase en ingles": "frase en español".
+   Para añadir texto nuevo basta con sumar el par a ese archivo.
+   =================================================== */
+(function(){
+  var IDIOMA = "dxm-idioma";
+  var boton  = document.querySelector(".idioma");
+  if (!boton) return;
+
+  function textos(){
+    var salida = [], saltar = {SCRIPT:1, STYLE:1, NOSCRIPT:1};
+    var it = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if (saltar[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var n; while ((n = it.nextNode())) salida.push(n);
+    return salida;
+  }
+
+  function aplicar(lang){
+    var dic = window.ES || {};
+    textos().forEach(function(n){
+      if (n.__en === undefined) n.__en = n.nodeValue;          // guarda el original
+      var clave = n.__en.replace(/\s+/g, " ").trim();
+      if (lang === "es" && dic[clave]) {
+        n.nodeValue = n.__en.replace(clave, dic[clave]);
+      } else {
+        n.nodeValue = n.__en;
+      }
+    });
+    document.documentElement.lang = lang;
+    boton.textContent = lang === "es" ? "EN" : "ES";
+    boton.setAttribute("aria-label", lang === "es" ? "Read in English" : "Leer en español");
+    try { localStorage.setItem(IDIOMA, lang); } catch(e){}
+  }
+
+  var guardado = "en";
+  try { guardado = localStorage.getItem(IDIOMA) || "en"; } catch(e){}
+  if (guardado === "es") aplicar("es"); else aplicar("en");
+
+  boton.addEventListener("click", function(){
+    aplicar(document.documentElement.lang === "es" ? "en" : "es");
+  });
+})();

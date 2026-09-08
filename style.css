@@ -673,3 +673,19 @@ body.session main > section{padding:0;}
 .ses-paso .rotulo.trio span{margin-bottom:2px;}
 .ses-paso .rotulo.trio span:nth-child(2){opacity:.82;}
 .ses-paso .rotulo.trio span:nth-child(3){opacity:.64;}
+
+/* --- conmutador de idioma --- */
+.idioma{
+  background:none; border:1px solid var(--line-2); color:var(--dim-2);
+  font-family:var(--font); font-size:.62rem; font-weight:400;
+  letter-spacing:.18em; text-transform:uppercase;
+  padding:6px 11px; margin-left:26px; cursor:pointer; border-radius:2px;
+  transition:color .25s ease, border-color .25s ease;
+}
+.idioma:hover{color:var(--acento); border-color:var(--acento);}
+.idioma:focus-visible{outline:2px solid var(--acento); outline-offset:2px;}
+/* en español sobra el subtitulo español de los titulares */
+html[lang="es"] .es{display:none;}
+@media (max-width:860px){
+  .idioma{margin-left:0; margin-top:18px; align-self:flex-start;}
+}
