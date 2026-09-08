@@ -675,19 +675,25 @@ body.session main > section{padding:0;}
   color:#fff; font-weight:700; letter-spacing:-.015em;
   font-size:clamp(1.6rem,4.6vw,3.4rem); line-height:1.05;
 }
-.ses-paso .rotulo .fijo{margin-right:.34em;}
-.ciclo{display:inline-grid; vertical-align:baseline;}
-.ciclo > span{
-  grid-area:1/1; text-align:left; opacity:0;
-  animation:ses-ciclo 5s linear infinite;
+.ses-paso .rotulo .fijo{display:inline; margin:0 .34em 0 0; padding:0; max-width:none; color:#fff;}
+/* Todas las palabras ocupan la misma celda: no se mueven ni un pixel.
+   La regla general .ses-paso .rotulo span les pone display:block y ancho
+   completo, asi que aqui se anula con mas peso. */
+.ses-paso .rotulo .ciclo{display:inline-grid; vertical-align:top;}
+.ses-paso .rotulo .ciclo > span{
+  display:block; grid-area:1/1; justify-self:start;
+  max-width:none; margin:0; padding:0; text-align:left;
+  opacity:0; color:var(--acento);                  /* el turquesa del sitio */
+  animation:ses-ciclo 15s ease-in-out infinite;    /* 3 s por palabra */
 }
-.ciclo > span:nth-child(1){animation-delay:0s;}
-.ciclo > span:nth-child(2){animation-delay:1s;}
-.ciclo > span:nth-child(3){animation-delay:2s;}
-.ciclo > span:nth-child(4){animation-delay:3s;}
-.ciclo > span:nth-child(5){animation-delay:4s;}
+.ses-paso .rotulo .ciclo > span:nth-child(1){animation-delay:0s;}
+.ses-paso .rotulo .ciclo > span:nth-child(2){animation-delay:3s;}
+.ses-paso .rotulo .ciclo > span:nth-child(3){animation-delay:6s;}
+.ses-paso .rotulo .ciclo > span:nth-child(4){animation-delay:9s;}
+.ses-paso .rotulo .ciclo > span:nth-child(5){animation-delay:12s;}
+/* aparece en 0.6 s, se queda 2 s, y se va cruzandose con la siguiente */
 @keyframes ses-ciclo{
-  0%{opacity:0;} 4%{opacity:1;} 17%{opacity:1;} 21%{opacity:0;} 100%{opacity:0;}
+  0%{opacity:0;} 4%{opacity:1;} 17%{opacity:1;} 24%{opacity:0;} 100%{opacity:0;}
 }
 /* en español el orden cambia: la frase completa va en cada palabra */
 html[lang="es"] .ses-paso .rotulo .fijo{display:none;}
