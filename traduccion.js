@@ -129,10 +129,6 @@ window.ES = {
 "Visual introduction": "Introducción visual",
 "The process": "El proceso",
 "The sessions": "Las sesiones",
-"A real person.": "Una persona real.",
-"A real place.": "Un lugar real.",
-"A camera.": "Una cámara.",
-"Time.": "Tiempo.",
 "Meet": "Encuentro",
 "Two people, before anything is filmed.": "Dos personas, antes de filmar nada.",
 "The agreement of a trajectory.": "El acuerdo de una trayectoria.",
@@ -168,5 +164,11 @@ window.ES = {
 "Filmed entirely. Now in development of post-production: With a rough cut, review and re-editing, color grading, and soundtrack review.": "Rodada por completo. En desarrollo de postproducción: con un primer corte, revisión y remontaje, etalonaje y revisión de la banda sonora.",
 "Filmed entirely. Now in development of post-production: Writing and recording of voice-over, sound effects, soundtrack, editing, and color grading.": "Rodada por completo. En desarrollo de postproducción: escritura y grabación de voz en off, efectos de sonido, banda sonora, montaje y etalonaje.",
 "Filmed entirely. Now in develpment of post-production: Writing and recording of voice-over development.": "Rodada por completo. En desarrollo de postproducción: escritura y grabación de voz en off.",
-"Filmed entirely. Now in development of post-production: Voice-over, animated graphic special effects, sound effects, soundtrack, editing, and color grading.": "Rodada por completo. En desarrollo de postproducción: voz en off, efectos gráficos animados, efectos de sonido, banda sonora, montaje y etalonaje."
+"Filmed entirely. Now in development of post-production: Voice-over, animated graphic special effects, sound effects, soundtrack, editing, and color grading.": "Rodada por completo. En desarrollo de postproducción: voz en off, efectos gráficos animados, efectos de sonido, banda sonora, montaje y etalonaje.",
+"A real": "",
+"person.": "Una persona real.",
+"place.": "Un lugar real.",
+"cameraman.": "Un camarógrafo real.",
+"time.": "Un tiempo real.",
+"presence.": "Una presencia real."
 };
