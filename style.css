@@ -689,3 +689,7 @@ html[lang="es"] .es{display:none;}
 @media (max-width:860px){
   .idioma{margin-left:0; margin-top:18px; align-self:flex-start;}
 }
+
+/* --- video propio dentro de una ficha de sesion --- */
+.ses-video{background:#000;}
+.ses-video video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
