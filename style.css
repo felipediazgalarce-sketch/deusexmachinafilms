@@ -675,11 +675,11 @@ body.session main > section{padding:0;}
   color:#fff; font-weight:700; letter-spacing:-.015em;
   font-size:clamp(1.6rem,4.6vw,3.4rem); line-height:1.05;
 }
-.ses-paso .rotulo .fijo{display:inline; margin:0 .34em 0 0; padding:0; max-width:none; color:#fff;}
+.ses-paso .rotulo .fijo{display:inline; margin:0 .28em 0 0; padding:0; max-width:none; color:#fff;}
 /* Todas las palabras ocupan la misma celda: no se mueven ni un pixel.
    La regla general .ses-paso .rotulo span les pone display:block y ancho
    completo, asi que aqui se anula con mas peso. */
-.ses-paso .rotulo .ciclo{display:inline-grid; vertical-align:top;}
+.ses-paso .rotulo .ciclo{display:inline-grid; vertical-align:top; padding:0; margin:0; max-width:none;}
 .ses-paso .rotulo .ciclo > span{
   display:block; grid-area:1/1; justify-self:start;
   max-width:none; margin:0; padding:0; text-align:left;
