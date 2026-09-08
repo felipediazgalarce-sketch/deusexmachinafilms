@@ -668,3 +668,8 @@ body.session main > section{padding:0;}
   letter-spacing:-.012em; color:rgba(255,255,255,.94); margin:0 auto;
   text-transform:none;
 }
+
+/* --- las tres lineas del encuentro sobre una sola imagen --- */
+.ses-paso .rotulo.trio span{margin-bottom:2px;}
+.ses-paso .rotulo.trio span:nth-child(2){opacity:.82;}
+.ses-paso .rotulo.trio span:nth-child(3){opacity:.64;}
