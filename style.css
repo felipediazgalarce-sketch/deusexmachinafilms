@@ -661,3 +661,10 @@ body.session main > section{padding:0;}
   .ses-hero .texto > *,.ses-rotulo,.ses-proceso,.ses-tomas,.ses-datos,.ses-bloque,.ses-fotogramas{padding-left:18px; padding-right:18px;}
   .ses-paso .rotulo span,.ses-tarjeta .marco > *{padding-left:18px; padding-right:18px;}
 }
+
+/* --- ciudad en la ficha de sesion: peso propio, casi como el nombre --- */
+.ses-hero .ciudad{
+  font-weight:300; font-size:clamp(1.7rem,5.2vw,3.6rem); line-height:1.05;
+  letter-spacing:-.012em; color:rgba(255,255,255,.94); margin:0 auto;
+  text-transform:none;
+}
