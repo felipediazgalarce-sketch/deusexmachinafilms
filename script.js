@@ -115,11 +115,14 @@
     var dic = window.ES || {};
     textos().forEach(function(n){
       if (n.__en === undefined) n.__en = n.nodeValue;          // guarda el original
-      var clave = n.__en.replace(/\s+/g, " ").trim();
+      var bruto = n.__en;
+      var clave = bruto.replace(/\s+/g, " ").trim();
       if (lang === "es" && dic[clave]) {
-        n.nodeValue = n.__en.replace(clave, dic[clave]);
+        /* se conservan los espacios de los bordes: el texto puede venir con
+           saltos de linea o espacios dobles del maquetado */
+        n.nodeValue = bruto.match(/^\s*/)[0] + dic[clave] + bruto.match(/\s*$/)[0];
       } else {
-        n.nodeValue = n.__en;
+        n.nodeValue = bruto;
       }
     });
     document.documentElement.lang = lang;

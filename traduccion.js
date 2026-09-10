@@ -170,5 +170,9 @@ window.ES = {
 "place.": "Un lugar real.",
 "cameraman.": "Un camarógrafo real.",
 "time.": "Un tiempo real.",
-"presence.": "Una presencia real."
+"presence.": "Una presencia real.",
+"dEUSeXmACHINAfilms, Extension Center of the Ministry of Culture, Arts and Heritage of Chile (CENTEX).": "dEUSeXmACHINAfilms, Centro de Extensión del Ministerio de las Culturas, las Artes y el Patrimonio de Chile (CENTEX).",
+"La Redonda and dEUSeXmACHINAfilms.": "La Redonda y dEUSeXmACHINAfilms.",
+"Heidi Duckler Dance and dEUSeXmACHINAfilms.": "Heidi Duckler Dance y dEUSeXmACHINAfilms.",
+"A dEUSeXmACHINAfilms production": "Una producción de dEUSeXmACHINAfilms"
 };
