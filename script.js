@@ -126,7 +126,6 @@
       }
     });
     document.documentElement.lang = lang;
-    boton.textContent = lang === "es" ? "EN" : "ES";
     boton.setAttribute("aria-label", lang === "es" ? "Read in English" : "Leer en español");
     try { localStorage.setItem(IDIOMA, lang); } catch(e){}
   }

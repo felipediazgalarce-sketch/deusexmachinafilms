@@ -704,15 +704,16 @@ html[lang="es"] .ses-paso .rotulo .fijo{display:none;}
 }
 
 /* --- conmutador de idioma --- */
+/* se muestra la bandera del idioma al que se cambia */
 .idioma{
-  background:none; border:1px solid var(--line-2); color:var(--dim-2);
-  font-family:var(--font); font-size:.62rem; font-weight:400;
-  letter-spacing:.18em; text-transform:uppercase;
-  padding:6px 11px; margin-left:26px; cursor:pointer; border-radius:2px;
-  transition:color .25s ease, border-color .25s ease;
+  background:none; border:0; padding:0; margin-left:26px; cursor:pointer;
+  line-height:0; opacity:.8; transition:opacity .25s ease, transform .25s ease;
 }
-.idioma:hover{color:var(--acento-texto); border-color:var(--acento-texto);}
-.idioma:focus-visible{outline:2px solid var(--acento); outline-offset:2px;}
+.idioma:hover{opacity:1; transform:scale(1.08);}
+.idioma:focus-visible{outline:2px solid var(--acento-texto); outline-offset:3px;}
+.bandera{width:24px; height:auto; display:block; border:1px solid var(--line-2); border-radius:1px;}
+html[lang="en"] .bandera.en{display:none;}
+html[lang="es"] .bandera.es{display:none;}
 /* en español sobra el subtitulo español de los titulares */
 html[lang="es"] .es{display:none;}
 @media (max-width:860px){
