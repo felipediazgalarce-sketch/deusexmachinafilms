@@ -24,7 +24,8 @@
   --dim-2:#6b6763;
   --cuerpo:#141414;
   --barra:rgba(238,236,234,.88);
-  --acento:#0d9488;          /* turquesa profundo, legible sobre claro */
+  --acento:#0d9488;
+  --acento-texto:#0a6f66;   /* turquesa mas oscuro, legible como texto sobre claro */          /* turquesa profundo, legible sobre claro */
 
   --font:"Jost",-apple-system,BlinkMacSystemFont,"Futura","Century Gothic",sans-serif;
   --max:1240px;
@@ -60,7 +61,7 @@ header.scrolled{padding:16px 40px;}
 .logo img{height:21px; width:auto;}
 nav ul{display:flex; gap:34px; list-style:none;}
 nav a{font-size:.66rem; text-decoration:none; color:var(--dim); transition:color .25s; white-space:nowrap;}
-nav a:hover,nav a:focus-visible,nav a.actual{color:var(--acento);}
+nav a:hover,nav a:focus-visible,nav a.actual{color:var(--acento-texto);}
 .burger{display:none; background:none; border:0; cursor:pointer; padding:6px;}
 .burger span{display:block; width:24px; height:1px; background:var(--text); margin:6px 0;}
 
@@ -232,7 +233,7 @@ footer{
   header{padding:18px 22px;}
   header.scrolled{padding:14px 22px;}
   .burger{display:block;}
-  nav{position:fixed; inset:60px 0 auto 0; background:rgba(0,0,0,.98); border-bottom:1px solid var(--line); display:none;}
+  nav{position:fixed; inset:60px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
   nav.open{display:block;}
   nav ul{flex-direction:column; gap:0; padding:10px 22px 24px;}
   nav a{display:block; padding:16px 0; font-size:.72rem;}
