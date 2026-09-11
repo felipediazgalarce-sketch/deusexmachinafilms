@@ -723,3 +723,37 @@ html[lang="es"] .es{display:none;}
 /* --- video propio dentro de una ficha de sesion --- */
 .ses-video{background:#000;}
 .ses-video video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
+
+
+/* ================= ABOUT: foto junto al director ================= */
+.about.una-columna{grid-template-columns:1fr;}
+.director{display:grid; grid-template-columns:230px 1fr; gap:44px; align-items:start; margin-top:8px;}
+.director-foto{width:100%; height:auto; display:block;}
+/* .about p.firma trae margen superior; aqui la firma debe arrancar a la altura de la foto */
+.about .director p.firma{margin-top:0;}
+@media (max-width:860px){
+  .director{grid-template-columns:1fr; gap:26px;}
+  .director-foto{max-width:300px;}
+}
+
+/* ================= ABOUT: logo que cae letra por letra =================
+   Cada letra es un SVG propio dentro de un span HTML: asi recibe
+   perspectiva 3D real, cosa que los elementos internos de un SVG no admiten. */
+.logo-animado{position:relative; width:min(100%,620px); aspect-ratio:666/146; margin:0 0 64px; color:var(--text);}
+.logo-animado .letra{
+  position:absolute; display:block; transform-origin:50% 100%;
+  animation:letra-cae 1.15s cubic-bezier(.2,.75,.2,1) both;
+  animation-delay:calc(var(--i) * 75ms + 250ms);
+}
+.logo-animado .letra svg{width:100%; height:100%; display:block; overflow:visible;}
+.logo-animado .letra path{fill:currentColor;}
+@keyframes letra-cae{
+  0%  {opacity:0; transform:perspective(700px) translateY(-85%) rotateX(78deg); filter:blur(5px);}
+  60% {opacity:1; filter:blur(0);}
+  100%{opacity:1; transform:perspective(700px) translateY(0) rotateX(0);}
+}
+@media (prefers-reduced-motion:reduce){ .logo-animado .letra{animation:none;} }
+
+/* ================= numero de serie al pie del home ================= */
+.serie{display:block; margin-top:12px; font-size:.55rem; letter-spacing:.22em;
+       font-variant-numeric:tabular-nums; opacity:.32;}

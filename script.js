@@ -138,3 +138,20 @@
     aplicar(document.documentElement.lang === "es" ? "en" : "es");
   });
 })();
+
+
+/* ============ Numero de serie (contador de visitas) ============
+   Cuenta una visita por navegador y dia, en cualquier pagina.
+   El numero vive en el servidor de felipediazgalarce.com y solo
+   se muestra al pie del home. */
+(function(){
+  var hoy = new Date().toISOString().slice(0, 10), sumar = true;
+  try { sumar = localStorage.getItem("dxm-visto") !== hoy; localStorage.setItem("dxm-visto", hoy); } catch(e){}
+  fetch("https://felipediazgalarce.com/contador.php?sitio=dxm" + (sumar ? "&accion=sumar" : ""), {cache:"no-store"})
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var el = document.getElementById("serie");
+      if (el && d && typeof d.n === "number") el.textContent = "N.º " + String(d.n).padStart(4, "0");
+    })
+    .catch(function(){});
+})();
