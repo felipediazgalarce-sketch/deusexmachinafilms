@@ -96,8 +96,8 @@
    =================================================== */
 (function(){
   var IDIOMA = "dxm-idioma";
-  var boton  = document.querySelector(".idioma");
-  if (!boton) return;
+  var botones = document.querySelectorAll(".bandera-btn");
+  if (!botones.length) return;
 
   function textos(){
     var salida = [], saltar = {SCRIPT:1, STYLE:1, NOSCRIPT:1};
@@ -126,7 +126,7 @@
       }
     });
     document.documentElement.lang = lang;
-    boton.setAttribute("aria-label", lang === "es" ? "Read in English" : "Leer en español");
+    botones.forEach(function(x){ x.setAttribute("aria-pressed", x.dataset.lang === lang ? "true" : "false"); });
     try { localStorage.setItem(IDIOMA, lang); } catch(e){}
   }
 
@@ -134,9 +134,7 @@
   try { guardado = localStorage.getItem(IDIOMA) || "en"; } catch(e){}
   if (guardado === "es") aplicar("es"); else aplicar("en");
 
-  boton.addEventListener("click", function(){
-    aplicar(document.documentElement.lang === "es" ? "en" : "es");
-  });
+  botones.forEach(function(x){ x.addEventListener("click", function(){ aplicar(x.dataset.lang); }); });
 })();
 
 

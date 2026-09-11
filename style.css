@@ -704,18 +704,18 @@ html[lang="es"] .ses-paso .rotulo .fijo{display:none;}
 }
 
 /* --- conmutador de idioma --- */
-/* se muestra la bandera del idioma al que se cambia */
-.idioma{
-  background:none; border:0; padding:0; margin-left:26px; cursor:pointer;
-  line-height:0; opacity:.8; transition:opacity .25s ease, transform .25s ease;
-}
-.idioma:hover{opacity:1; transform:scale(1.08);}
-.idioma:focus-visible{outline:2px solid var(--acento-texto); outline-offset:3px;}
-.bandera{width:24px; height:auto; display:block; border:1px solid var(--line-2); border-radius:1px;}
-html[lang="en"] .bandera.en{display:none;}
-html[lang="es"] .bandera.es{display:none;}
+/* idioma: las dos banderas a la vista; la del idioma activo, plena */
+.idioma{display:inline-flex; align-items:center; gap:6px; margin-left:26px;}
+.bandera-btn{background:none; border:0; padding:0; line-height:0; cursor:pointer;
+  opacity:.4; transition:opacity .2s ease;}
+.bandera-btn:hover{opacity:.85;}
+.bandera-btn:focus-visible{outline:2px solid var(--acento-texto); outline-offset:2px;}
+html[lang="es"] .bandera-btn[data-lang="es"],
+html[lang="en"] .bandera-btn[data-lang="en"]{opacity:1;}
+.bandera{height:11px; width:auto; display:block; border:1px solid var(--line-2); border-radius:1px;}
 /* en español sobra el subtitulo español de los titulares */
-html[lang="es"] .es{display:none;}
+/* solo los subtitulos (span); sin esto tambien ocultaba la bandera espanola, que es un svg con clase es */
+html[lang="es"] span.es{display:none;}
 @media (max-width:860px){
   .idioma{margin-left:0; margin-top:18px; align-self:flex-start;}
 }
