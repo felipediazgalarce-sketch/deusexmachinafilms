@@ -776,7 +776,7 @@ html[lang="es"] span.es{display:none;}
   -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent); mask-image:linear-gradient(to bottom,#000 70%,transparent);
 }
 .sellos.largo{row-gap:.25vw; padding-top:1.4vw;}   /* Pandora: 17 en dos columnas, filas mas juntas para que quepan */
-.sellos.linea{grid-template-columns:repeat(3,auto);}   /* tres festivales en una sola fila */
+.sellos.linea{grid-template-columns:none; grid-auto-flow:column;}   /* todos los festivales en una sola fila */
 .sello{direction:ltr; display:flex; align-items:center; justify-content:center; height:3.6vw; filter:drop-shadow(0 1px 2px rgba(0,0,0,.8));}
 .sello::before,.sello::after{
   content:""; flex:none; height:100%; aspect-ratio:.6; background:currentColor;   /* la rama ocupa la mitad izquierda del svg: se recorta el vacio */
