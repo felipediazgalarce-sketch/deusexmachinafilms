@@ -810,9 +810,11 @@ html[lang="es"] span.es{display:none;}
 .aliados{list-style:none; margin:0; padding:10px 0 0; display:flex; flex-wrap:wrap; align-items:center; gap:34px 64px;}
 .aliados img{display:block; height:80px; width:auto; opacity:.62; transition:opacity .3s;}
 .aliados li:hover img{opacity:1;}
-.aliados img[src*="centex"]{height:36px;}      /* logo apaisado: a igual peso visual */
+.aliados img[src*="centex"]{height:36px;}      /* logos apaisados: a igual peso visual */
+.aliados img[src*="algarrobo"]{height:58px;}
 @media (max-width:700px){
   .aliados{gap:26px 38px;}
   .aliados img{height:48px;}
   .aliados img[src*="centex"]{height:23px;}
+  .aliados img[src*="algarrobo"]{height:35px;}
 }
