@@ -179,5 +179,13 @@ window.ES = {
 "CinemaChile catalogue · New Chilean Films 2025": "Catálogo CinemaChile · New Chilean Films 2025",
 "Chile — USA": "Chile — EE. UU.",
 "Chile — Sweden": "Chile — Suecia",
-"Chile — Netherlands": "Chile — Países Bajos"
+"Chile — Netherlands": "Chile — Países Bajos",
+"The Heart Is Not a Bomb": "El corazón no es una bomba",
+"El corazón no es una bomba": "The Heart Is Not a Bomb",
+"Explorers of La Redonda": "Exploradores de la Redonda",
+"Exploradores de la Redonda": "Explorers of La Redonda",
+"To Dwell": "Morar",
+"Morar": "To Dwell",
+"Ecdysis: Actions for Shedding Skin. Liquefy": "Ecdisis acciones para mudar de piel. Licuar",
+"Ecdisis acciones para mudar de piel. Licuar": "Ecdysis: Actions for Shedding Skin. Liquefy"
 };

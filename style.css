@@ -818,3 +818,6 @@ html[lang="es"] span.es{display:none;}
   .aliados img[src*="centex"]{height:23px;}
   .aliados img[src*="algarrobo"]{height:35px;}
 }
+
+/* traduccion del titulo que solo tiene sentido en la version en ingles */
+html[lang="es"] .alt.solo-en{display:none;}
