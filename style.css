@@ -821,3 +821,11 @@ html[lang="es"] span.es{display:none;}
 
 /* traduccion del titulo que solo tiene sentido en la version en ingles */
 html[lang="es"] .alt.solo-en{display:none;}
+
+/* tarjeta del catalogo CinemaChile sobre la portada, arriba a la derecha */
+.tarjeta-cc{position:absolute; top:2.6vw; right:3.4vw; z-index:3; display:block; width:15vw; min-width:120px; line-height:0;
+  box-shadow:0 6px 24px rgba(0,0,0,.45); transition:transform .3s;}
+.tarjeta-cc img{width:100%; height:auto;}
+a.tarjeta-cc:hover,a.tarjeta-cc:focus-visible{transform:scale(1.04);}
+.portada .tarjeta-cc{pointer-events:none;}
+@media (max-width:700px){ .tarjeta-cc{min-width:96px; top:12px; right:14px;} }

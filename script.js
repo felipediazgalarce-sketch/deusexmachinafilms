@@ -157,9 +157,12 @@
 
 /* ============ Visor de miniaturas (catalogo CinemaChile) ============ */
 (function(){
-  document.querySelectorAll(".miniaturas a").forEach(function(a){
+  document.querySelectorAll(".miniaturas a, a.tarjeta-cc").forEach(function(a){
+    /* la tarjeta vive dentro del bloque del video: que no lo reproduzca */
+    a.addEventListener("keydown", function(ev){ ev.stopPropagation(); });
     a.addEventListener("click", function(ev){
       ev.preventDefault();
+      ev.stopPropagation();
       var visor = document.createElement("div");
       visor.className = "visor";
       visor.innerHTML = '<img alt="">';
