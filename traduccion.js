@@ -176,5 +176,8 @@ window.ES = {
 "Heidi Duckler Dance and dEUSeXmACHINAfilms.": "Heidi Duckler Dance y dEUSeXmACHINAfilms.",
 "A dEUSeXmACHINAfilms production": "Una producción de dEUSeXmACHINAfilms",
 "partners & collaborators": "aliados y colaboradores",
-"CinemaChile catalogue · New Chilean Films 2025": "Catálogo CinemaChile · New Chilean Films 2025"
+"CinemaChile catalogue · New Chilean Films 2025": "Catálogo CinemaChile · New Chilean Films 2025",
+"Chile — USA": "Chile — EE. UU.",
+"Chile — Sweden": "Chile — Suecia",
+"Chile — Netherlands": "Chile — Países Bajos"
 };
