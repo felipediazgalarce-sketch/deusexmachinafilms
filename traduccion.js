@@ -174,5 +174,7 @@ window.ES = {
 "dEUSeXmACHINAfilms, Extension Center of the Ministry of Culture, Arts and Heritage of Chile (CENTEX).": "dEUSeXmACHINAfilms, Centro de Extensión del Ministerio de las Culturas, las Artes y el Patrimonio de Chile (CENTEX).",
 "La Redonda and dEUSeXmACHINAfilms.": "La Redonda y dEUSeXmACHINAfilms.",
 "Heidi Duckler Dance and dEUSeXmACHINAfilms.": "Heidi Duckler Dance y dEUSeXmACHINAfilms.",
-"A dEUSeXmACHINAfilms production": "Una producción de dEUSeXmACHINAfilms"
+"A dEUSeXmACHINAfilms production": "Una producción de dEUSeXmACHINAfilms",
+"partners & collaborators": "aliados y colaboradores",
+"CinemaChile catalogue · New Chilean Films 2025": "Catálogo CinemaChile · New Chilean Films 2025"
 };

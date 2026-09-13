@@ -153,3 +153,23 @@
     })
     .catch(function(){});
 })();
+
+
+/* ============ Visor de miniaturas (catalogo CinemaChile) ============ */
+(function(){
+  document.querySelectorAll(".miniaturas a").forEach(function(a){
+    a.addEventListener("click", function(ev){
+      ev.preventDefault();
+      var visor = document.createElement("div");
+      visor.className = "visor";
+      visor.innerHTML = '<img alt="">';
+      visor.firstChild.src = a.href;
+      visor.firstChild.alt = a.querySelector("img").alt;
+      function cerrar(){ visor.remove(); document.removeEventListener("keydown", tecla); }
+      function tecla(e){ if (e.key === "Escape") cerrar(); }
+      visor.addEventListener("click", cerrar);
+      document.addEventListener("keydown", tecla);
+      document.body.appendChild(visor);
+    });
+  });
+})();

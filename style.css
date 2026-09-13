@@ -791,3 +791,28 @@ html[lang="es"] span.es{display:none;}
 /* en pantallas chicas los nombres no se alcanzan a leer: la lista
    de festivales sigue en la ficha de cada obra */
 @media (max-width:700px){ .sellos{display:none;} }
+
+/* ---------------- CATALOGO CINEMACHILE (work in progress) ---------------- */
+.catalogo{margin-top:52px; padding-top:34px; border-top:1px solid var(--line);}
+.catalogo h3{font-size:.62rem; color:var(--dim-2); margin-bottom:22px; font-weight:400; text-transform:uppercase; letter-spacing:.19em;}
+.miniaturas{display:flex; flex-wrap:wrap; gap:14px;}
+.miniaturas a{display:block; line-height:0; border:1px solid var(--line); transition:opacity .3s,transform .3s;}
+.miniaturas img{height:170px; width:auto;}
+.miniaturas a:hover,.miniaturas a:focus-visible{opacity:.8; transform:translateY(-2px);}
+@media (max-width:700px){ .miniaturas img{height:110px;} }
+
+/* visor de la miniatura en grande */
+.visor{position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center;
+  padding:4vw; background:rgba(8,8,8,.9); cursor:zoom-out;}
+.visor img{max-width:100%; max-height:100%; width:auto; height:auto; box-shadow:0 20px 60px rgba(0,0,0,.5);}
+
+/* ---------------- ALIADOS Y COLABORADORES (home) ---------------- */
+.aliados{list-style:none; margin:0; padding:10px 0 0; display:flex; flex-wrap:wrap; align-items:center; gap:34px 64px;}
+.aliados img{display:block; height:80px; width:auto; opacity:.62; transition:opacity .3s;}
+.aliados li:hover img{opacity:1;}
+.aliados img[src*="centex"]{height:36px;}      /* logo apaisado: a igual peso visual */
+@media (max-width:700px){
+  .aliados{gap:26px 38px;}
+  .aliados img{height:48px;}
+  .aliados img[src*="centex"]{height:23px;}
+}
