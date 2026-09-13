@@ -757,3 +757,42 @@ html[lang="es"] span.es{display:none;}
 /* ================= numero de serie al pie del home ================= */
 .serie{display:block; margin-top:12px; font-size:.55rem; letter-spacing:.22em;
        font-variant-numeric:tabular-nums; opacity:.32;}
+
+/* ---------------- LAURELES SOBRE LA PORTADA ---------------- */
+/* Un laurel por festival, en una banda arriba (o abajo a la derecha
+   cuando arriba hay rostros). Medidas en vw: las portadas cruzan la
+   pantalla entera. Tres escalas segun cuantos festivales son. */
+.sellos{
+  position:absolute; top:0; left:0; right:0; z-index:3; pointer-events:none;
+  display:flex; flex-wrap:wrap; justify-content:center;
+  padding:2.6vw 4vw 6vw;
+  background:linear-gradient(to bottom,rgba(0,0,0,.72),rgba(0,0,0,.38) 55%,transparent);
+  color:#fff; font-family:var(--font); text-transform:none; letter-spacing:0;
+}
+.sello{display:flex; align-items:center; justify-content:center; filter:drop-shadow(0 1px 2px rgba(0,0,0,.8));}
+.sello::before,.sello::after{
+  content:""; flex:none; height:100%; aspect-ratio:1; background:currentColor;
+  -webkit-mask:url(img/laurel.svg) center/contain no-repeat; mask:url(img/laurel.svg) center/contain no-repeat;
+}
+.sello::after{transform:scaleX(-1);}
+.sello .st{display:flex; flex-direction:column; align-items:center; text-align:center; line-height:1.08;}
+.sello em{font-style:normal; font-weight:400; text-transform:uppercase; letter-spacing:.14em; opacity:.85;}
+.sello b{font-weight:600;}
+.sello i{font-style:normal; opacity:.75;}
+.sello.premio{color:#ecd9a4;}
+
+.sellos.pocos{gap:0 3vw;}
+.sellos.pocos .sello{height:6.2vw;}
+.sellos.pocos .st{width:13vw;} .sellos.pocos em{font-size:.78vw} .sellos.pocos b{font-size:1.45vw; margin:.25vw 0} .sellos.pocos i{font-size:.85vw}
+.sellos.muchos{gap:.7vw .5vw; padding-left:3vw; padding-right:3vw;}
+.sellos.muchos .sello{height:3.6vw;}
+.sellos.muchos .st{width:6.6vw;} .sellos.muchos em{font-size:.46vw} .sellos.muchos b{font-size:.86vw; margin:.12vw 0} .sellos.muchos i{font-size:.54vw}
+
+.sellos.abajo{
+  top:auto; bottom:0; left:auto; right:0; width:74%; justify-content:flex-end;
+  padding:6vw 3.4vw 3.2vw 3vw;
+  background:linear-gradient(to top,rgba(0,0,0,.78),rgba(0,0,0,.38) 55%,transparent);
+}
+/* en pantallas chicas los nombres no se alcanzan a leer: la lista
+   de festivales sigue en la ficha de cada obra */
+@media (max-width:700px){ .sellos{display:none;} }
