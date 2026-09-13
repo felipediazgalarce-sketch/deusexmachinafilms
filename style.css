@@ -787,7 +787,7 @@ html[lang="es"] span.es{display:none;}
 .sello em{font-style:normal; font-weight:400; text-transform:uppercase; letter-spacing:.14em; opacity:.85; font-size:.46vw;}
 .sello b{font-weight:600; font-size:.86vw; margin:.12vw 0;}
 .sello i{font-style:normal; opacity:.75; font-size:.54vw;}
-.sello.premio{color:#ecd9a4;}
+.sello.premio{color:var(--acento);}
 /* en pantallas chicas los nombres no se alcanzan a leer: la lista
    de festivales sigue en la ficha de cada obra */
 @media (max-width:700px){ .sellos{display:none;} }
