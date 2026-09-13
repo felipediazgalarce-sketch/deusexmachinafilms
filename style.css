@@ -760,8 +760,8 @@ html[lang="es"] span.es{display:none;}
 
 /* ---------------- LAURELES SOBRE LA PORTADA ---------------- */
 /* Un laurel por festival, todos del mismo tamano, agrupados a la
-   derecha de arriba hacia abajo en dos columnas. .abajo apila un
-   segundo grupo desde abajo (Escape). Medidas en vw: las portadas
+   derecha de arriba hacia abajo en dos columnas (.linea: tres en
+   una fila). Medidas en vw: las portadas
    cruzan la pantalla entera. */
 .sellos{
   position:absolute; top:0; right:0; z-index:3; pointer-events:none;
@@ -776,10 +776,7 @@ html[lang="es"] span.es{display:none;}
   -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent); mask-image:linear-gradient(to bottom,#000 70%,transparent);
 }
 .sellos.largo{row-gap:.25vw; padding-top:1.4vw;}   /* Pandora: 17 en dos columnas, filas mas juntas para que quepan */
-.sellos.abajo{
-  top:auto; bottom:0; padding:3.4vw 3.4vw 3.2vw 6vw;
-}
-.sellos.abajo::before{-webkit-mask-image:linear-gradient(to top,#000 70%,transparent); mask-image:linear-gradient(to top,#000 70%,transparent);}
+.sellos.linea{grid-template-columns:repeat(3,auto);}   /* tres festivales en una sola fila */
 .sello{direction:ltr; display:flex; align-items:center; justify-content:center; height:3.6vw; filter:drop-shadow(0 1px 2px rgba(0,0,0,.8));}
 .sello::before,.sello::after{
   content:""; flex:none; height:100%; aspect-ratio:.6; background:currentColor;   /* la rama ocupa la mitad izquierda del svg: se recorta el vacio */
