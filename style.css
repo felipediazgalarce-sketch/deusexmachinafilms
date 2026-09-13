@@ -812,11 +812,13 @@ html[lang="es"] span.es{display:none;}
 .aliados li:hover img{opacity:1;}
 .aliados img[src*="centex"]{height:36px;}      /* logos apaisados: a igual peso visual */
 .aliados img[src*="algarrobo"]{height:58px;}
+.aliados img[src*="redonda"]{height:92px;}      /* trazo fino: un poco mas grande */
 @media (max-width:700px){
   .aliados{gap:26px 38px;}
   .aliados img{height:48px;}
   .aliados img[src*="centex"]{height:23px;}
   .aliados img[src*="algarrobo"]{height:35px;}
+  .aliados img[src*="redonda"]{height:56px;}
 }
 
 /* traduccion del titulo que solo tiene sentido en la version en ingles */
