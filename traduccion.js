@@ -187,5 +187,10 @@ window.ES = {
 "To Dwell": "Morar",
 "Morar": "To Dwell",
 "Ecdysis: Actions for Shedding Skin. Liquefy": "Ecdisis acciones para mudar de piel. Licuar",
-"Ecdisis acciones para mudar de piel. Licuar": "Ecdysis: Actions for Shedding Skin. Liquefy"
+"Ecdisis acciones para mudar de piel. Licuar": "Ecdysis: Actions for Shedding Skin. Liquefy",
+"07 films": "07 cortometrajes",
+"Dance film": "Videodanza",
+"Choreographed and directed by": "Coreografía y dirección",
+"Three dancers awaken to new surroundings and venture into unknown territory among the natural and historic landmarks of the island of Chiloé, in southern Chile: a journey to find home, accompanied by the music of Pájaros Kiltros.": "Tres bailarines despiertan en un entorno desconocido y se adentran en territorio nuevo entre los paisajes naturales e históricos de la isla de Chiloé, en el sur de Chile: un viaje en busca de un hogar, acompañado por la música de Pájaros Kiltros.",
+"Duration: 09:56": "Duración: 09:56"
 };
