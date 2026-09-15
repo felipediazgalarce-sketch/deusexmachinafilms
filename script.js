@@ -44,8 +44,10 @@
   // Los videos se cargan solo al pulsarlos: la pagina no arranca con 17 iframes.
   function incrustar(caja, id, titulo) {
     var f = document.createElement("iframe");
-    f.src = "https://www.youtube-nocookie.com/embed/" + id
-          + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    f.src = caja.dataset.vimeo
+          ? "https://player.vimeo.com/video/" + caja.dataset.vimeo + "?autoplay=1&dnt=1"
+          : "https://www.youtube-nocookie.com/embed/" + id
+            + "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
     f.title = titulo || "Video";
     f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
     f.allowFullscreen = true;
@@ -54,7 +56,7 @@
   }
 
   // Bloques de video con poster (fichas completas y destacado)
-  Array.prototype.forEach.call(document.querySelectorAll(".ratio[data-video]"), function (caja) {
+  Array.prototype.forEach.call(document.querySelectorAll(".ratio[data-video], .ratio[data-vimeo]"), function (caja) {
     var p = document.createElement("span");
     p.className = "play";
     p.innerHTML = SVG;
