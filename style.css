@@ -697,7 +697,8 @@ body.session main > section{padding:0;}
   0%{opacity:0;} 4%{opacity:1;} 17%{opacity:1;} 24%{opacity:0;} 100%{opacity:0;}
 }
 /* en español el orden cambia: la frase completa va en cada palabra */
-html[lang="es"] .ses-paso .rotulo .fijo{display:none;}
+html[lang="es"] .ses-paso .rotulo .fijo,
+html[lang="de"] .ses-paso .rotulo .fijo{display:none;}
 @media (prefers-reduced-motion:reduce){
   .ciclo > span{animation:none; opacity:0;}
   .ciclo > span:first-child{opacity:1;}
@@ -711,7 +712,8 @@ html[lang="es"] .ses-paso .rotulo .fijo{display:none;}
 .bandera-btn:hover{opacity:.85;}
 .bandera-btn:focus-visible{outline:2px solid var(--acento-texto); outline-offset:2px;}
 html[lang="es"] .bandera-btn[data-lang="es"],
-html[lang="en"] .bandera-btn[data-lang="en"]{opacity:1;}
+html[lang="en"] .bandera-btn[data-lang="en"],
+html[lang="de"] .bandera-btn[data-lang="de"]{opacity:1;}
 .bandera{height:11px; width:auto; display:block; border:1px solid var(--line-2); border-radius:1px;}
 /* en español sobra el subtitulo español de los titulares */
 /* solo los subtitulos (span); sin esto tambien ocultaba la bandera espanola, que es un svg con clase es */
@@ -822,7 +824,8 @@ html[lang="es"] span.es{display:none;}
 }
 
 /* traduccion del titulo que solo tiene sentido en la version en ingles */
-html[lang="es"] .alt.solo-en{display:none;}
+html[lang="es"] .alt.solo-en,
+html[lang="de"] .alt.solo-en{display:none;}
 
 /* tarjeta del catalogo CinemaChile sobre la portada, arriba a la derecha */
 .tarjeta-cc{position:absolute; top:2.6vw; right:3.4vw; z-index:3; display:block; width:15vw; min-width:120px; line-height:0;

@@ -89,7 +89,7 @@
 })();
 
 
-/* ============ IDIOMA: ingles <-> español ============
+/* ============ IDIOMA: ingles <-> español (+ aleman en /de/) ============
    El sitio se escribe en ingles. La traduccion vive en traduccion.js,
    como pares "frase en ingles": "frase en español".
    Para añadir texto nuevo basta con sumar el par a ese archivo.
@@ -110,6 +110,13 @@
     var n; while ((n = it.nextNode())) salida.push(n);
     return salida;
   }
+
+  /* version alemana: son paginas estaticas bajo /de/ (para que Google las indexe).
+     Desde /de/ el ingles y el español vuelven a la pagina equivalente de la raiz. */
+  var enAleman = document.documentElement.getAttribute("data-version") === "de";
+  function irA(ruta){ location.href = ruta + location.hash; }
+  function rutaRaiz(){ return location.pathname.replace(/^\/de(\/|$)/, "/"); }
+  function rutaAleman(){ return "/de" + location.pathname; }
 
   function aplicar(lang){
     var dic = window.ES || {};
@@ -132,9 +139,20 @@
 
   var guardado = "en";
   try { guardado = localStorage.getItem(IDIOMA) || "en"; } catch(e){}
-  if (guardado === "es") aplicar("es"); else aplicar("en");
 
-  botones.forEach(function(x){ x.addEventListener("click", function(){ aplicar(x.dataset.lang); }); });
+  if (enAleman) {
+    botones.forEach(function(x){ x.setAttribute("aria-pressed", x.dataset.lang === "de" ? "true" : "false"); });
+  } else if (guardado === "de") {
+    location.replace(rutaAleman() + location.hash);
+  } else if (guardado === "es") aplicar("es"); else aplicar("en");
+
+  botones.forEach(function(x){ x.addEventListener("click", function(){
+    var lang = x.dataset.lang;
+    try { localStorage.setItem(IDIOMA, lang); } catch(e){}
+    if (lang === "de") { if (!enAleman) irA(rutaAleman()); }
+    else if (enAleman) irA(rutaRaiz());
+    else aplicar(lang);
+  }); });
 })();
 
 
