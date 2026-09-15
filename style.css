@@ -843,3 +843,13 @@ html[lang="de"] .alt.solo-en{display:none;}
 a.tarjeta-cc:hover,a.tarjeta-cc:focus-visible{transform:translateY(-50%) scale(1.04); transform-origin:right center;}
 .portada .tarjeta-cc{pointer-events:none;}
 @media (max-width:700px){ .tarjeta-cc{min-width:72px;} }
+
+/* laurel original del festival (imagen en un solo color, se tine con currentColor) */
+.sello.sello-img{height:4.9vw; width:auto; filter:drop-shadow(0 1px 2px rgba(0,0,0,.7));
+  background:currentColor; -webkit-mask:var(--laurel) center/contain no-repeat; mask:var(--laurel) center/contain no-repeat;}
+.sello.sello-img::before,.sello.sello-img::after{content:none;}
+.sellos.largo .sello.sello-img{height:4.2vw;}
+@media (max-width:700px){
+  .sello.sello-img{height:30px;}
+  .sellos.largo .sello.sello-img{height:26px;}
+}

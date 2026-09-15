@@ -77,7 +77,9 @@ def rutas(t):
         if re.match(r'^(https?:|mailto:|tel:|#|/|data:)', url): return m.group(0)
         if ACTIVO.search(url): return '%s="../%s"' % (attr, url)
         return m.group(0)
-    return re.sub(r'\b(src|href|poster)="([^"]*)"', fix, t)
+    t = re.sub(r'\b(src|href|poster)="([^"]*)"', fix, t)
+    # imagenes dentro de estilos en linea (laureles originales)
+    return re.sub(r'url\((?!https?:|data:|/)([^)]*)\)', lambda m: 'url(../%s)' % m.group(1), t)
 
 def meta(t, p):
     titulo, desc, ogt, ogd = META[p]
