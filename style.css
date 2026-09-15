@@ -761,14 +761,18 @@ html[lang="es"] span.es{display:none;}
        font-variant-numeric:tabular-nums; opacity:.32;}
 
 /* ---------------- LAURELES SOBRE LA PORTADA ---------------- */
-/* Un laurel por festival, todos del mismo tamano, agrupados a la
-   derecha de arriba hacia abajo en dos columnas (.linea: tres en
-   una fila). Medidas en vw: las portadas
+/* Todos los laureles de una portada ocupan la misma caja (--lw x --lh):
+   los originales de cada festival (imagen) y los dibujados (ramas + texto).
+   Las ramas se pegan al texto; la caja solo fija el alto y el ancho de columna.
+   Agrupados a la derecha, de arriba hacia abajo. Medidas en vw: las portadas
    cruzan la pantalla entera. */
 .sellos{
+  --lw:11.6vw; --lh:5vw; --rama:.55;
+  --em:.48vw; --b:.9vw; --i:.54vw;
   position:absolute; top:0; right:0; z-index:3; pointer-events:none;
-  display:grid; grid-template-columns:repeat(2,auto); gap:.7vw .5vw; direction:rtl; /* el impar queda pegado a la derecha */
-  padding:2.6vw 3.4vw 3.4vw 6vw;
+  display:grid; grid-template-columns:repeat(2,var(--lw)); gap:.45vw .5vw;
+  direction:rtl;                                   /* el impar queda pegado a la derecha */
+  padding:2.4vw 3.2vw 3.4vw 6vw;
   color:#fff; font-family:var(--font); text-transform:none; letter-spacing:0; isolation:isolate;
 }
 /* sombra detras del grupo; el desvanecido va solo en la sombra, no en los laureles */
@@ -777,30 +781,37 @@ html[lang="es"] span.es{display:none;}
   background:linear-gradient(to left,rgba(0,0,0,.68),rgba(0,0,0,.34) 60%,transparent);
   -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent); mask-image:linear-gradient(to bottom,#000 70%,transparent);
 }
-.sellos.largo{row-gap:.25vw; padding-top:1.4vw;}   /* Pandora: 17 en dos columnas, filas mas juntas para que quepan */
-.sellos.linea{grid-template-columns:none; grid-auto-flow:column;}   /* todos los festivales en una sola fila */
-.sello{direction:ltr; display:flex; align-items:center; justify-content:center; height:3.6vw; filter:drop-shadow(0 1px 2px rgba(0,0,0,.8));}
+.sellos.largo{--lw:9.4vw; --lh:3.9vw; --em:.4vw; --b:.76vw; --i:.46vw; gap:.3vw .4vw; padding-top:1.4vw;}  /* Pandora: 17 */
+.sellos.linea{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:var(--lw);}   /* una sola fila */
+
+.sello{direction:ltr; width:var(--lw); height:var(--lh); display:flex; align-items:center; justify-content:center;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.75));}
+.sello.premio{color:var(--acento);}
+/* laurel dibujado: dos ramas pegadas al texto */
 .sello::before,.sello::after{
-  content:""; flex:none; height:100%; aspect-ratio:.6; background:currentColor;   /* la rama ocupa la mitad izquierda del svg: se recorta el vacio */
+  content:""; flex:none; height:100%; aspect-ratio:var(--rama); background:currentColor;
   -webkit-mask:url(img/laurel.svg) left center/auto 100% no-repeat; mask:url(img/laurel.svg) left center/auto 100% no-repeat;
 }
 .sello::after{transform:scaleX(-1);}
-.sello .st{display:flex; flex-direction:column; align-items:center; text-align:center; line-height:1.08; max-width:7.4vw; padding:0 .1vw;}
-.sello em{font-style:normal; font-weight:400; text-transform:uppercase; letter-spacing:.14em; opacity:.85; font-size:.46vw;}
-.sello b{font-weight:600; font-size:.86vw; margin:.12vw 0;}
-.sello i{font-style:normal; opacity:.75; font-size:.54vw;}
-.sello.premio{color:var(--acento);}
-/* en pantallas chicas los nombres no se alcanzan a leer: la lista
-   de festivales sigue en la ficha de cada obra */
+.sello .st{flex:0 1 auto; min-width:0; max-width:calc(var(--lw) - 2 * var(--lh) * var(--rama));
+  display:flex; flex-direction:column; align-items:center; text-align:center; line-height:1.05;}
+.sello em{font-style:normal; font-weight:400; text-transform:uppercase; letter-spacing:.1em; opacity:.85; font-size:var(--em);}
+.sello b{font-weight:600; font-size:var(--b); margin:.1vw 0;}
+.sello i{font-style:normal; opacity:.75; font-size:var(--i);}
+/* laurel original del festival: imagen en un solo color, contenida en la misma caja */
+.sello.sello-img{background:currentColor;
+  -webkit-mask:var(--laurel) center/contain no-repeat; mask:var(--laurel) center/contain no-repeat;}
+.sello.sello-img::before,.sello.sello-img::after{content:none;}
+
 @media (max-width:700px){
-  /* en el celular: laureles chicos, solo el nombre del festival (y la categoria si es premio) */
-  .sellos{padding:8px 10px 10px 18px; gap:3px 4px;}
-  .sellos.largo{grid-template-columns:repeat(3,auto); row-gap:2px; padding-top:6px;}
-  .sello{height:22px;}
-  .sello .st{max-width:60px; padding:0 1px;}
+  /* en el celular: mismas cajas, mas chicas; en los dibujados solo el nombre (y la categoria si es premio) */
+  .sellos{--lw:74px; --lh:28px; --rama:.5; --b:6.2px; --em:4.2px;
+    padding:8px 8px 10px 16px; gap:3px 3px;}
+  .sellos.largo{--lw:70px; --lh:24px; --rama:.42; --b:5.8px; --em:4px; grid-template-columns:repeat(3,var(--lw)); gap:2px 2px; padding-top:6px;}
   .sello em,.sello i{display:none;}
-  .sello.premio em{display:block; font-size:4.5px; letter-spacing:.08em;}
-  .sello b{font-size:7px; line-height:1.05; margin:0;}
+  .sello.premio em{display:block; letter-spacing:.06em;}
+  .sello b{margin:0; line-height:1;}
+  .sello.premio em{margin-bottom:1px;}
 }
 
 /* ---------------- CATALOGO CINEMACHILE (work in progress) ---------------- */
@@ -843,13 +854,3 @@ html[lang="de"] .alt.solo-en{display:none;}
 a.tarjeta-cc:hover,a.tarjeta-cc:focus-visible{transform:translateY(-50%) scale(1.04); transform-origin:right center;}
 .portada .tarjeta-cc{pointer-events:none;}
 @media (max-width:700px){ .tarjeta-cc{min-width:72px;} }
-
-/* laurel original del festival (imagen en un solo color, se tine con currentColor) */
-.sello.sello-img{height:4.9vw; width:auto; filter:drop-shadow(0 1px 2px rgba(0,0,0,.7));
-  background:currentColor; -webkit-mask:var(--laurel) center/contain no-repeat; mask:var(--laurel) center/contain no-repeat;}
-.sello.sello-img::before,.sello.sello-img::after{content:none;}
-.sellos.largo .sello.sello-img{height:4.2vw;}
-@media (max-width:700px){
-  .sello.sello-img{height:30px;}
-  .sellos.largo .sello.sello-img{height:26px;}
-}

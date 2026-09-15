@@ -196,3 +196,30 @@
     });
   });
 })();
+
+
+/* ============ Laureles dibujados: las ramas abrazan el texto ============
+   Un texto que se parte en varias lineas ocupa todo su ancho maximo aunque
+   sus lineas sean mas cortas; aqui se ajusta al ancho de la linea mas larga
+   para que las ramas queden pegadas a las letras. */
+(function(){
+  var textos = document.querySelectorAll(".sello .st");
+  if (!textos.length) return;
+  function ajustar(){
+    textos.forEach(function(st){
+      st.style.width = "";
+      var r = document.createRange(), ancho = 0;
+      st.querySelectorAll("em, b, i").forEach(function(el){
+        if (el.offsetParent === null) return;          // oculto (celular)
+        r.selectNodeContents(el);
+        Array.prototype.forEach.call(r.getClientRects(), function(x){ ancho = Math.max(ancho, x.width); });
+      });
+      if (ancho) st.style.width = Math.ceil(ancho + 1) + "px";
+    });
+  }
+  var t;
+  addEventListener("resize", function(){ clearTimeout(t); t = setTimeout(ajustar, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustar);
+  addEventListener("load", ajustar);
+  ajustar();
+})();
