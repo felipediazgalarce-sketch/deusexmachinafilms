@@ -641,7 +641,7 @@ body.session main > section{padding:0;}
 .ses-dato dd{margin:0; font-size:1.02rem; color:var(--text); font-weight:300;}
 
 .ses-bloque{max-width:var(--max); margin:0 auto; padding:clamp(56px,8vw,100px) 30px 0;}
-.ses-bloque h2{
+.ses-bloque > h2{
   font-weight:700; font-size:clamp(1.6rem,4vw,2.8rem); letter-spacing:-.018em;
   color:var(--text); margin:0 0 8px; text-transform:none; line-height:1.06;
 }
@@ -792,7 +792,16 @@ html[lang="es"] span.es{display:none;}
 .sello.premio{color:var(--acento);}
 /* en pantallas chicas los nombres no se alcanzan a leer: la lista
    de festivales sigue en la ficha de cada obra */
-@media (max-width:700px){ .sellos{display:none;} }
+@media (max-width:700px){
+  /* en el celular: laureles chicos, solo el nombre del festival (y la categoria si es premio) */
+  .sellos{padding:8px 10px 10px 18px; gap:3px 4px;}
+  .sellos.largo{grid-template-columns:repeat(3,auto); row-gap:2px; padding-top:6px;}
+  .sello{height:22px;}
+  .sello .st{max-width:60px; padding:0 1px;}
+  .sello em,.sello i{display:none;}
+  .sello.premio em{display:block; font-size:4.5px; letter-spacing:.08em;}
+  .sello b{font-size:7px; line-height:1.05; margin:0;}
+}
 
 /* ---------------- CATALOGO CINEMACHILE (work in progress) ---------------- */
 .catalogo{margin-top:52px; padding-top:34px; border-top:1px solid var(--line);}
@@ -828,9 +837,9 @@ html[lang="es"] .alt.solo-en,
 html[lang="de"] .alt.solo-en{display:none;}
 
 /* tarjeta del catalogo CinemaChile sobre la portada, arriba a la derecha */
-.tarjeta-cc{position:absolute; top:2.6vw; right:3.4vw; z-index:3; display:block; width:15vw; min-width:120px; line-height:0;
+.tarjeta-cc{position:absolute; top:50%; right:0; transform:translateY(-50%); z-index:3; display:block; width:10vw; min-width:84px; line-height:0;
   box-shadow:0 6px 24px rgba(0,0,0,.45); transition:transform .3s;}
 .tarjeta-cc img{width:100%; height:auto;}
-a.tarjeta-cc:hover,a.tarjeta-cc:focus-visible{transform:scale(1.04);}
+a.tarjeta-cc:hover,a.tarjeta-cc:focus-visible{transform:translateY(-50%) scale(1.04); transform-origin:right center;}
 .portada .tarjeta-cc{pointer-events:none;}
-@media (max-width:700px){ .tarjeta-cc{min-width:96px; top:12px; right:14px;} }
+@media (max-width:700px){ .tarjeta-cc{min-width:72px;} }
