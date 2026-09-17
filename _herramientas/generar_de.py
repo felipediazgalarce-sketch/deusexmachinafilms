@@ -27,7 +27,7 @@ META = {
  "music-video/": ("Musikvideos — dEUSeXmACHINA films",
       "Musikvideos von dEUSeXmACHINAfilms für SOL BUSTAMANTE, Oliver Aron, IVOLIER, Elías André und SUBE. Musikvideo-Produktion in Klagenfurt, Kärnten.", None, None),
  "cinematography/": ("Kamera — dEUSeXmACHINA films",
-      "Kameraarbeit von Felipe Díaz Galarce für andere Künstler*innen: Tanz, Performance und Theater in Chile — TIBIA, MEMBRANA, Al Caer la Noche, Artidanza und F.A.S.E. 0.", None, None),
+      "Kameraarbeit von Felipe Díaz Galarce für andere Künstler*innen: Tanz, Performance, Musik und Theater in Chile — PAISAJE LOA, TIBIA, MEMBRANA, Emmanuel Bermedo, Al Caer la Noche, Artidanza und F.A.S.E. 0.", None, None),
  "work-in-progress/": ("In Arbeit — dEUSeXmACHINA films",
       "Filme in Entwicklung und Postproduktion bei dEUSeXmACHINAfilms: MEDUSA OF STONE, HELIX EVOLUTION, VENUS IN VITRO und AMATEURS.", None, None),
  "about-us/": ("Über uns — dEUSeXmACHINA films",

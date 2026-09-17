@@ -210,5 +210,11 @@ window.ES = {
 "Original idea": "Idea original",
 "Performance & co-direction": "Actuación y codirección",
 "Valparaíso, Chile": "Valparaíso, Chile",
-"GAM, Santiago, Chile": "GAM, Santiago, Chile"
+"GAM, Santiago, Chile": "GAM, Santiago, Chile",
+"07 collaborations": "07 colaboraciones",
+"Immersive stage piece": "Obra escénica inmersiva",
+"On footprints in the rocks and other things that can dance. An immersive stage piece inspired by the rock art of the Atacama Desert.": "Sobre huellas en las rocas y otras cosas que pueden danzar. Obra escénica inmersiva inspirada en el arte rupestre del Desierto de Atacama.",
+"Cueca, solo guitar": "Cueca, guitarra sola",
+"La Isla de la Fantasía, Chile": "La Isla de la Fantasía, Chile",
+"Guitar": "Guitarra"
 };
