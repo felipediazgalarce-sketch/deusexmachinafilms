@@ -59,6 +59,7 @@ header{
 }
 header.scrolled{padding:16px 40px;}
 .logo img{height:21px; width:auto;}
+.logo{flex-shrink:0; margin-right:28px;}
 nav ul{display:flex; gap:34px; list-style:none;}
 nav a{font-size:.66rem; text-decoration:none; color:var(--dim); transition:color .25s; white-space:nowrap;}
 nav a:hover,nav a:focus-visible,nav a.actual{color:var(--acento-texto);}
@@ -229,6 +230,16 @@ footer{
 .obra:target{box-shadow:-24px 0 0 var(--line-2);}
 
 /* ---------------- MOVIL ---------------- */
+/* el menu tiene siete secciones: por debajo de 1180px pasa al boton, como en el celular */
+@media (max-width:1180px){
+  .burger{display:block;}
+  nav{position:fixed; inset:60px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
+  nav.open{display:block;}
+  nav ul{flex-direction:column; gap:0; padding:10px 40px 24px;}
+  nav a{display:block; padding:16px 0; font-size:.72rem;}
+}
+@media (max-width:860px){ nav ul{padding:10px 22px 24px;} }
+
 @media (max-width:860px){
   header{padding:18px 22px;}
   header.scrolled{padding:14px 22px;}

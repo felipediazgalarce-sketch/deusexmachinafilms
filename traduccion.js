@@ -216,5 +216,7 @@ window.ES = {
 "On footprints in the rocks and other things that can dance. An immersive stage piece inspired by the rock art of the Atacama Desert.": "Sobre huellas en las rocas y otras cosas que pueden danzar. Obra escénica inmersiva inspirada en el arte rupestre del Desierto de Atacama.",
 "Cueca, solo guitar": "Cueca, guitarra sola",
 "La Isla de la Fantasía, Chile": "La Isla de la Fantasía, Chile",
-"Guitar": "Guitarra"
+"Guitar": "Guitarra",
+"Other Collaborations": "Otras colaboraciones",
+"other collaborations": "otras colaboraciones"
 };
