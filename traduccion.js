@@ -247,5 +247,6 @@ window.ES = {
 "The first part of the series Misoginia: Eva, Pandora, Lilith. A woman walks through the city, its temples, its subway and its street festivals, discovering her own sensuality.": "Primera parte de la serie Misoginia: Eva, Pandora, Lilith. Una mujer recorre la ciudad, sus templos, su metro y sus fiestas callejeras, descubriendo su propia sensualidad.",
 "Greece · 2016": "Grecia · 2016",
 "Duration: 04:41": "Duración: 04:41",
-"08 films": "08 películas"
+"08 films": "08 películas",
+"09 collaborations": "09 colaboraciones"
 };
