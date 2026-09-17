@@ -115,7 +115,7 @@ window.ES = {
 "a mention for choreography at the VIII Muestra Movimiento Audiovisual.": "una mención por coreografía en la VIII Muestra Movimiento Audiovisual.",
 "dEUSeXmACHINAfilms makes dance films, experimental and hybrid documentary, and music videos.": "dEUSeXmACHINAfilms hace cine de danza, documental experimental e híbrido, y videoclips.",
 "Founded in 2018, working between Chile and Austria.": "Fundada en 2018, trabajando entre Chile y Austria.",
-"The work has screened in thirteen countries: Chile, Argentina, Brazil, Colombia, Costa Rica, Mexico, the United States, Spain, Portugal, Italy, Romania, Indonesia and Australia.": "La obra se ha exhibido en trece países: Chile, Argentina, Brasil, Colombia, Costa Rica, México, Estados Unidos, España, Portugal, Italia, Rumania, Indonesia y Australia.",
+"The work has screened in fourteen countries: Chile, Argentina, Brazil, Colombia, Costa Rica, Mexico, the United States, Spain, Portugal, Italy, Greece, Romania, Indonesia and Australia.": "La obra se ha exhibido en catorce países: Chile, Argentina, Brasil, Colombia, Costa Rica, México, Estados Unidos, España, Portugal, Italia, Grecia, Rumania, Indonesia y Australia.",
 "Before cinema, twelve years in theatre as actor, playwright and director, and producer of the stage company Turba between 2009 and 2019. He dances contemporary and contact improvisation with the company": "Antes del cine, doce años de teatro como actor, dramaturgo y director, y productor de la compañía Turba entre 2009 y 2019. Practica danza contemporánea y contacto improvisación con la compañía",
 ", performing in Argentina, Peru, Chile, Brazil, Canada and China.": ", con la que se ha presentado en Argentina, Perú, Chile, Brasil, Canadá y China.",
 "Full biography and personal work at": "Biografía completa y trabajo personal en",
@@ -239,5 +239,13 @@ window.ES = {
 "Video mapping": "Video mapping",
 "Visual art": "Arte visual",
 "Watch the trailer": "Ver el tráiler",
-"08 collaborations": "08 colaboraciones"
+"08 collaborations": "08 colaboraciones",
+"Misogyny Eve": "Misoginia Eva",
+"Teaser": "Teaser",
+"Videodance": "Videodanza",
+"Graphics": "Gráfica",
+"The first part of the series Misoginia: Eva, Pandora, Lilith. A woman walks through the city, its temples, its subway and its street festivals, discovering her own sensuality.": "Primera parte de la serie Misoginia: Eva, Pandora, Lilith. Una mujer recorre la ciudad, sus templos, su metro y sus fiestas callejeras, descubriendo su propia sensualidad.",
+"Greece · 2016": "Grecia · 2016",
+"Duration: 04:41": "Duración: 04:41",
+"08 films": "08 películas"
 };
