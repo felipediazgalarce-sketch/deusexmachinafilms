@@ -14,7 +14,7 @@ import json, re, os, html
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITIO = "https://deusexmachinafilms.art"
-PAGINAS = ["", "short-films/", "music-video/", "work-in-progress/", "about-us/",
+PAGINAS = ["", "short-films/", "music-video/", "cinematography/", "work-in-progress/", "about-us/",
            "contacts/", "the-session/", "the-session/marlie-amsterdam/", "the-session/nina-valdivia/"]
 
 META = {
@@ -26,6 +26,8 @@ META = {
       "Kurzfilme von dEUSeXmACHINAfilms (Klagenfurt · Chile): EL CORAZÓN NO ES UNA BOMBA, EXPLORADORES DE LA REDONDA, MORAR, ECDISIS/LICUAR, ESCAPE und misoginia PANDORA. Credits, Besetzung und Festivals.", None, None),
  "music-video/": ("Musikvideos — dEUSeXmACHINA films",
       "Musikvideos von dEUSeXmACHINAfilms für SOL BUSTAMANTE, Oliver Aron, IVOLIER, Elías André und SUBE. Musikvideo-Produktion in Klagenfurt, Kärnten.", None, None),
+ "cinematography/": ("Kamera — dEUSeXmACHINA films",
+      "Kameraarbeit von Felipe Díaz Galarce für andere Künstler*innen: Tanz, Performance und Theater in Chile — TIBIA, MEMBRANA, Al Caer la Noche, Artidanza und F.A.S.E. 0.", None, None),
  "work-in-progress/": ("In Arbeit — dEUSeXmACHINA films",
       "Filme in Entwicklung und Postproduktion bei dEUSeXmACHINAfilms: MEDUSA OF STONE, HELIX EVOLUTION, VENUS IN VITRO und AMATEURS.", None, None),
  "about-us/": ("Über uns — dEUSeXmACHINA films",
