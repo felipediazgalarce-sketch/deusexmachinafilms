@@ -15,7 +15,7 @@ import json, re, os, html
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITIO = "https://deusexmachinafilms.art"
 PAGINAS = ["", "short-films/", "music-video/", "collaborations/", "work-in-progress/", "about-us/",
-           "contacts/", "the-session/", "the-session/marlie-amsterdam/", "the-session/nina-valdivia/"]
+           "contacts/", "the-session/"]
 
 META = {
  "": ("dEUSeXmACHINA films — Videoproduktion, Tanzfilm & Musikvideos in Klagenfurt, Kärnten",

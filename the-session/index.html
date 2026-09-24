@@ -104,29 +104,112 @@
     <p class="menor">Whenever appropriate, long takes and continuous shots. The dancer should not have to dance the edit.</p>
   </section>
 
-  <!-- ============ ARCHIVO DE SESIONES ============
-       PARA AÑADIR UNA SESION NUEVA: duplicar el bloque <a class="ses-tarjeta">
-       de abajo, cambiar el enlace, la imagen, el lugar y el nombre.
-       La pagina individual se crea copiando the-session/marlie-amsterdam/
+  <!-- ============ LAS SESIONES ============
+       Cada sesion vive aqui mismo, una debajo de otra.
+       Para agregar una nueva: duplicar un bloque completo y cambiar
+       el ancla, las imagenes, la ficha y el ID del video.
        =============================================== -->
   <p class="ses-rotulo" style="padding-top:clamp(40px,6vw,70px)">The sessions</p>
-  <div class="ses-archivo">
-    <a class="ses-tarjeta" href="nina-valdivia/">
-      <img src="../img/session/nina-archivo.jpg" alt="Nina, Valdivia" loading="lazy" width="1920" height="1080">
-      <span class="marco">
-        <span class="lugar">Valdivia</span>
-        <h3>Nina</h3>
-        <span class="ir">Enter the session ↗</span>
-      </span>
-    </a>
-    <a class="ses-tarjeta" href="marlie-amsterdam/">
-      <img src="../img/session/marlie-archivo.jpg?v=2" alt="Marlie, Amsterdam" loading="lazy" width="1920" height="1080">
-      <span class="marco">
-        <span class="lugar">Amsterdam</span>
-        <h3>Marlie</h3>
-        <span class="ir">Enter the session ↗</span>
-      </span>
-    </a>
+
+<!-- ============ PORTADA ============ -->
+  <div class="ses-hero" id="marlie">
+    <img src="../img/session/marlie-hero.jpg" alt="Marlie, Amsterdam" width="1920" height="1080">
+    <div class="velo"></div>
+    <div class="texto">
+      <p class="kicker">The Session</p>
+      <h2 class="ses-nombre">Marlie</h2>
+      <p class="ciudad">Amsterdam</p>
+    </div>
+  </div>
+
+  <!-- ============ FICHA ============
+       Rellenar la fecha cuando la tengas: basta con escribirla dentro del <dd>.
+       ================================= -->
+  <dl class="ses-datos">
+    <div class="ses-dato"><dt>Participant</dt><dd>Marlie</dd></div>
+    <div class="ses-dato"><dt>Location</dt><dd>Amsterdam, Netherlands</dd></div>
+    <div class="ses-dato"><dt>Direction &amp; camera</dt><dd>Felipe Díaz Galarce</dd></div>
+    <div class="ses-dato"><dt>Production</dt><dd>dEUSeXmACHINA films</dd></div>
+  </dl>
+
+  <!-- ============ THE SESSION ============ -->
+  <section class="ses-bloque">
+    <h3>The Session</h3>
+    <p class="nota">The edited audiovisual record of the encounter. Not behind-the-scenes material: part of the work itself.</p>
+    <div class="ratio" data-video="gX9evYfyFUc" data-titulo="THE SESSION — Marlie, Amsterdam">
+      <img src="../img/session/marlie-hero.jpg" alt="THE SESSION — Marlie, Amsterdam" width="1920" height="1080">
+      <span class="marco"><span class="marco-tipo">Watch now</span><h3>Marlie, Amsterdam</h3></span>
+    </div>
+  </section>
+
+  <!-- ============ THE FILM ============
+       Cuando exista la pelicula surgida de esta sesion, quitar los comentarios
+       de este bloque y poner el ID de YouTube en data-video.
+       El orden es flexible: este bloque puede ir ANTES de THE SESSION.
+
+  <section class="ses-bloque">
+    <h3>The Film</h3>
+    <p class="nota">The cinematic work that emerges from the session.</p>
+    <div class="ratio" data-video="PONER_ID_AQUI" data-titulo="THE FILM — Marlie, Amsterdam">
+      <img src="../img/session/marlie-hero.jpg" alt="" width="1920" height="1080">
+      <span class="marco"><span class="marco-tipo">Watch now</span><h3>Marlie, Amsterdam</h3></span>
+    </div>
+  </section>
+       ==================================== -->
+
+  <!-- ============ FOTOGRAMAS ============ -->
+  <p class="ses-rotulo" style="padding-top:clamp(50px,7vw,90px)">Frames from the session</p>
+  <div class="ses-fotogramas">
+    <img src="../img/session/marlie-01.jpg" alt="Marlie, Amsterdam — frame" loading="lazy" width="1920" height="1080">
+    <img src="../img/session/marlie-02.jpg" alt="Marlie, Amsterdam — frame" loading="lazy" width="1920" height="1080">
+    <img src="../img/session/marlie-03.jpg" alt="Marlie, Amsterdam — frame" loading="lazy" width="1920" height="1080">
+  </div>
+
+<div class="ses-hero" id="nina">
+    <img src="../img/session/nina-hero.jpg" alt="Nina, Valdivia" width="1920" height="1080">
+    <div class="velo"></div>
+    <div class="texto">
+      <p class="kicker">The Session</p>
+      <h2 class="ses-nombre">Nina</h2>
+      <p class="ciudad">Valdivia</p>
+    </div>
+  </div>
+
+  <dl class="ses-datos">
+    <div class="ses-dato"><dt>Participant</dt><dd>Nina</dd></div>
+    <div class="ses-dato"><dt>Location</dt><dd>Valdivia, Chile</dd></div>
+    <div class="ses-dato"><dt>Direction &amp; camera</dt><dd>Felipe Díaz Galarce</dd></div>
+    <div class="ses-dato"><dt>Production</dt><dd>dEUSeXmACHINA films</dd></div>
+  </dl>
+
+  <section class="ses-bloque">
+    <h3>The Session</h3>
+    <p class="nota">The edited audiovisual record of the encounter. Not behind-the-scenes material: part of the work itself.</p>
+    <div class="ratio" data-video="tFNeAQiZg58" data-titulo="THE SESSION — Nina, Valdivia">
+      <img src="../img/session/nina-archivo.jpg" alt="THE SESSION — Nina, Valdivia" width="1920" height="1080">
+      <span class="marco"><span class="marco-tipo">Watch now</span><h3>Nina, Valdivia</h3></span>
+    </div>
+  </section>
+
+  <!-- ============ THE FILM ============
+       «El aire que me das» es la pelicula surgida de esta sesion.
+       Cuando este lista para publicarse, quitar los comentarios y poner el ID.
+
+  <section class="ses-bloque">
+    <h3>The Film</h3>
+    <p class="nota">The cinematic work that emerges from the session.</p>
+    <div class="ratio" data-video="PONER_ID_AQUI" data-titulo="El aire que me das">
+      <img src="../img/session/nina-01.jpg" alt="" width="1920" height="1080">
+      <span class="marco"><span class="marco-tipo">Watch now</span><h3>El aire que me das</h3></span>
+    </div>
+  </section>
+       ==================================== -->
+
+  <p class="ses-rotulo" style="padding-top:clamp(50px,7vw,90px)">Frames from the session</p>
+  <div class="ses-fotogramas">
+    <img src="../img/session/nina-01.jpg" alt="Nina, Valdivia — frame" loading="lazy" width="1920" height="1080">
+    <img src="../img/session/nina-02.jpg" alt="Nina, Valdivia — frame" loading="lazy" width="1920" height="1080">
+    <img src="../img/session/nina-03.jpg" alt="Nina, Valdivia — frame" loading="lazy" width="1920" height="1080">
   </div>
 
   <!-- ============ CODA ============ -->
