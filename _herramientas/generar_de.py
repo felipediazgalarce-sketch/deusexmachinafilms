@@ -92,6 +92,8 @@ def meta(t, p):
     url = '%s/de/%s' % (SITIO, p)
     t = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url, t, 1)
     t = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url, t, 1)
+    # datos estructurados de video: las fichas apuntan a la pagina alemana
+    t = t.replace('"url": "%s/%s#' % (SITIO, p), '"url": "%s/de/%s#' % (SITIO, p))
     if 'og:locale' not in t:
         t = t.replace('</head>', '<meta property="og:locale" content="de_AT">\n</head>', 1)
     return t
