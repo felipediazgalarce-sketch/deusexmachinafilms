@@ -223,3 +223,50 @@
   addEventListener("load", ajustar);
   ajustar();
 })();
+
+/* --- codigo para compartir el sitio: no se ve. Dos dedos sostenidos medio
+       segundo en el movil, ctrl/cmd + shift + Q en escritorio. Sirve en todas
+       las paginas, en aleman tambien, y a cualquier altura del scroll.
+       El codigo apunta a la pagina que se esta viendo. --- */
+(function(){
+  function corte(){
+    var t = location.pathname.replace(/^\/+|\/+$/g, '');
+    return t ? t.replace(/\//g, '-') : 'home';
+  }
+  function etiqueta(){
+    var t = location.pathname.replace(/\/+$/, '');
+    return 'deusexmachinafilms.art' + t;
+  }
+  var capa, reloj = null, oculta;
+  function crear(){
+    capa = document.createElement('div');
+    capa.className = 'qr-capa';
+    capa.innerHTML = '<div class="qr-caja"><div class="qr-panel">' +
+      '<img alt="" src="/img/qr/' + corte() + '.png?v=1"></div>' +
+      '<div class="qr-pie">' + etiqueta() + '</div></div>';
+    capa.addEventListener('click', cerrar);
+    document.body.appendChild(capa);
+  }
+  function abrir(){
+    if (!capa) crear();
+    capa.classList.add('visible');
+    clearTimeout(oculta);
+    oculta = setTimeout(cerrar, 45000);
+  }
+  function cerrar(){
+    if (capa) capa.classList.remove('visible');
+    clearTimeout(oculta);
+  }
+  document.addEventListener('touchstart', function(e){
+    if (e.touches.length !== 2) { clearTimeout(reloj); reloj = null; return; }
+    clearTimeout(reloj);
+    reloj = setTimeout(function(){ reloj = null; abrir(); }, 450);
+  }, { passive: true });
+  ['touchend','touchcancel','touchmove'].forEach(function(ev){
+    document.addEventListener(ev, function(){ clearTimeout(reloj); reloj = null; }, { passive: true });
+  });
+  document.addEventListener('keydown', function(e){
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'Q' || e.key === 'q')) { e.preventDefault(); abrir(); }
+    else if (e.key === 'Escape') cerrar();
+  });
+})();

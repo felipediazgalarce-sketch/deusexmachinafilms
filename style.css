@@ -871,3 +871,12 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 
 /* pocos laureles: en el celular van en una sola columna, mas pequenos */
 @media (max-width:700px){ .sellos.columna{--lw:62px; --lh:22px; --b:5.2px; --em:3.6px; grid-template-columns:var(--lw); gap:2px; padding:6px 6px 8px 10px;} }
+
+/* --- codigo para compartir: invisible, dos dedos en el movil o ctrl+shift+Q --- */
+.qr-capa{position:fixed; inset:0; z-index:9998; display:none; align-items:center; justify-content:center;
+  background:rgba(10,10,10,.94); backdrop-filter:blur(7px); cursor:pointer; opacity:0; transition:opacity .25s ease;}
+.qr-capa.visible{display:flex; opacity:1;}
+.qr-caja{display:flex; flex-direction:column; align-items:center; gap:18px; padding:24px;}
+.qr-panel{background:#fff; padding:20px; line-height:0;}
+.qr-panel img{display:block; width:min(64vmin,330px); height:auto; image-rendering:pixelated;}
+.qr-pie{font-size:.62rem; letter-spacing:.2em; color:var(--acento);}
