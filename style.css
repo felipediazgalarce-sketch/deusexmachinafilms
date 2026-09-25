@@ -814,12 +814,20 @@ html[lang="es"] span.es{display:none;}
   -webkit-mask:var(--laurel) center/contain no-repeat; mask:var(--laurel) center/contain no-repeat;}
 .sello.sello-img::before,.sello.sello-img::after{content:none;}
 
+/* laurel de imagen con el pais debajo: el <span> del laurel lleva la imagen como
+   mascara, asi que el texto no puede ir dentro; va como hermano, en un envoltorio */
+.sello-bloque{direction:ltr; display:flex; flex-direction:column; align-items:center; width:var(--lw);}
+.sello-bloque .sello{width:100%;}
+.sello-pais{font-size:var(--i); line-height:1.15; opacity:.72; text-align:center; white-space:nowrap;
+  margin-top:.14vw; filter:drop-shadow(0 1px 2px rgba(0,0,0,.75));}
+
 @media (max-width:700px){
   /* en el celular: mismas cajas, mas chicas; en los dibujados solo el nombre (y la categoria si es premio) */
   .sellos{--lw:74px; --lh:28px; --rama:.5; --b:6.2px; --em:4.2px;
     padding:8px 8px 10px 16px; gap:3px 3px;}
   .sellos.largo{--lw:70px; --lh:24px; --rama:.42; --b:5.8px; --em:4px; grid-template-columns:repeat(3,var(--lw)); gap:2px 2px; padding-top:6px;}
   .sello em,.sello i{display:none;}
+  .sello-pais{display:none;}
   .sello.premio em{display:block; letter-spacing:.06em;}
   .sello b{margin:0; line-height:1;}
   .sello.premio em{margin-bottom:1px;}
