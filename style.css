@@ -625,6 +625,11 @@ body.session main > section{padding:0;}
   text-transform:uppercase; color:rgba(255,255,255,.8);
 }
 .ses-tarjeta:hover .ir{color:var(--acento);}
+/* sesiones publicadas en Instagram: dos por fila en pantalla grande */
+.ses-archivo.doble{grid-template-columns:1fr 1fr; gap:2px; margin-bottom:clamp(50px,7vw,100px);}
+.ses-archivo.doble .ses-tarjeta .marco > *{padding:0 clamp(18px,2.4vw,34px);}
+.ses-archivo.doble .ses-tarjeta h3{font-size:clamp(1.4rem,2.6vw,2.3rem);}
+@media (max-width:700px){ .ses-archivo.doble{grid-template-columns:1fr;} }
 
 /* --- coda --- */
 .ses-coda{

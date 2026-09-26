@@ -129,6 +129,7 @@ window.ES = {
 "Visual introduction": "Introducción visual",
 "The process": "El proceso",
 "The sessions": "Las sesiones",
+"More sessions": "Más sesiones",
 "Meet": "Encuentro",
 "Two people, before anything is filmed.": "Dos personas, antes de filmar nada.",
 "The agreement of a trajectory.": "El acuerdo de una trayectoria.",
