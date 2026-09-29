@@ -553,7 +553,7 @@ body.session main > section{padding:0;}
    La primera imagen queda siempre debajo; las demas aparecen encima por turno. */
 .ses-fondos{position:relative;}
 .ses-fondos img + img{position:absolute; inset:0; height:100%; opacity:0; filter:brightness(.88);
-  animation:ses-fondo 30s linear infinite;}
+  animation:ses-fondo 45s linear infinite;}
 .ses-fondos img:nth-child(2){animation-delay:3s;}
 .ses-fondos img:nth-child(3){animation-delay:6s;}
 .ses-fondos img:nth-child(4){animation-delay:9s;}
@@ -563,8 +563,13 @@ body.session main > section{padding:0;}
 .ses-fondos img:nth-child(8){animation-delay:21s;}
 .ses-fondos img:nth-child(9){animation-delay:24s;}
 .ses-fondos img:nth-child(10){animation-delay:27s;}
+.ses-fondos img:nth-child(11){animation-delay:30s;}
+.ses-fondos img:nth-child(12){animation-delay:33s;}
+.ses-fondos img:nth-child(13){animation-delay:36s;}
+.ses-fondos img:nth-child(14){animation-delay:39s;}
+.ses-fondos img:nth-child(15){animation-delay:42s;}
 @keyframes ses-fondo{
-  0%{opacity:0;} 2%{opacity:1;} 10%{opacity:1;} 12%{opacity:0;} 100%{opacity:0;}
+  0%{opacity:0;} 1.4%{opacity:1;} 6.7%{opacity:1;} 8%{opacity:0;} 100%{opacity:0;}
 }
 @media (prefers-reduced-motion:reduce){ .ses-fondos img + img{animation:none; opacity:0;} }
 .ses-paso .rotulo{
@@ -643,16 +648,25 @@ body.session main > section{padding:0;}
   text-transform:uppercase; color:rgba(255,255,255,.8);
 }
 .ses-tarjeta:hover .ir{color:var(--acento);}
-/* sesiones publicadas en Instagram: una por fila, como Marlie y Nina */
-.ses-archivo.doble{grid-template-columns:1fr; gap:2px; margin-bottom:clamp(50px,7vw,100px);}
-/* una sesion con varios videos: cada tercio de la portada lleva al video del que salio */
-.ses-tarjeta.partes{overflow:hidden;}
-.ses-tarjeta .tercio{position:absolute; top:0; bottom:0; width:33.34%; z-index:2;}
-.ses-tarjeta .t1{left:0;} .ses-tarjeta .t2{left:33.33%;} .ses-tarjeta .t3{left:66.66%;}
-.ses-tarjeta.partes .marco{pointer-events:none; z-index:3;}
-.ses-tarjeta.partes .ir a{pointer-events:auto; color:inherit; text-decoration:none;}
-.ses-tarjeta.partes .ir a:hover{color:var(--acento);}
-.ses-tarjeta.partes .ir span + a{margin-left:26px;}
+
+
+/* --- las sesiones: grilla de portadas, tres por fila --- */
+.ses-grilla{max-width:var(--max); margin:0 auto; padding:0 30px; display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;}
+.ses-grilla.horizontales{margin-bottom:10px;}
+.ses-grilla.verticales{padding-bottom:clamp(60px,8vw,110px);}
+.ses-celda{position:relative; display:block; overflow:hidden; background:#000; text-decoration:none;}
+.ses-celda img{width:100%; display:block; object-fit:cover; aspect-ratio:16/9; transition:transform .8s ease, opacity .4s ease; opacity:.94;}
+.verticales .ses-celda img{aspect-ratio:4/5;}
+.ses-celda:hover img{transform:scale(1.03); opacity:1;}
+.ses-celda-txt{position:absolute; inset:auto 0 0 0; padding:40px 16px 14px;
+  background:linear-gradient(to top,rgba(0,0,0,.72),transparent); color:#fff;}
+.ses-celda-txt .lugar{display:block; font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; opacity:.8; margin-bottom:4px;}
+.ses-celda-txt .nombre{display:block; font-weight:700; font-size:clamp(1rem,1.6vw,1.3rem); letter-spacing:-.01em;}
+@media (max-width:860px){
+  .ses-grilla{padding-left:18px; padding-right:18px; grid-template-columns:repeat(2,minmax(0,1fr));}
+  .ses-grilla.horizontales{grid-template-columns:1fr;}
+}
 
 /* --- coda --- */
 .ses-coda{
