@@ -71,6 +71,24 @@
     });
   });
 
+  // The Session: los bucles mudos corren solo mientras se ven en pantalla
+  var bucles = document.querySelectorAll("video.ses-bucle");
+  if (bucles.length && "IntersectionObserver" in window
+      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var obs = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.25 });
+    Array.prototype.forEach.call(bucles, function (v) {
+      v.muted = true;
+      v.addEventListener("playing", function () { v.classList.add("andando"); });
+      obs.observe(v);
+    });
+  }
+
   // Fichas de la grilla de portada
   Array.prototype.forEach.call(document.querySelectorAll("button.work"), function (b) {
     var p = b.querySelector(".play");

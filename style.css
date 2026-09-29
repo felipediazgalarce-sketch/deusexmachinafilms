@@ -937,3 +937,8 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .qr-panel{background:#fff; padding:20px; line-height:0;}
 .qr-panel img{display:block; width:min(64vmin,330px); height:auto; image-rendering:pixelated;}
 .qr-pie{font-size:.62rem; letter-spacing:.2em; color:var(--acento);}
+
+/* The Session: bucles mudos que corren al verse en pantalla */
+.ses-bucle{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease, transform .8s ease; pointer-events:none;}
+.ses-bucle.andando{opacity:1;}
+.ses-celda:hover .ses-bucle{transform:scale(1.03);}
