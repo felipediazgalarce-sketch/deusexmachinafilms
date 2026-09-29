@@ -667,6 +667,9 @@ body.session main > section{padding:0;}
   background:linear-gradient(to top,rgba(0,0,0,.72),transparent); color:#fff;}
 .ses-celda-txt .lugar{display:block; font-size:.58rem; letter-spacing:.22em; text-transform:uppercase; opacity:.8; margin-bottom:4px;}
 .ses-celda-txt .nombre{display:block; font-weight:700; font-size:clamp(1rem,1.6vw,1.3rem); letter-spacing:-.01em;}
+/* en el home la grilla va dentro de la seccion, sin el margen propio de la pagina */
+#the-session .ses-grilla{max-width:none; padding:0;}
+#the-session .ses-grilla.verticales{padding-bottom:0;}
 @media (max-width:860px){
   .ses-grilla{padding-left:18px; padding-right:18px; grid-template-columns:repeat(2,minmax(0,1fr));}
   .ses-grilla.horizontales{grid-template-columns:1fr;}
