@@ -31,7 +31,7 @@ META = {
  "work-in-progress/": ("In Arbeit — dEUSeXmACHINA films",
       "Filme in Entwicklung und Postproduktion bei dEUSeXmACHINAfilms: HELIX EVOLUTION, VENUS IN VITRO und AMATEURS.", None, None),
  "about-us/": ("Über uns — dEUSeXmACHINA films",
-      "dEUSeXmACHINAfilms, 2018 von Felipe Díaz Galarce gegründet: Tanzfilme, experimenteller Dokumentarfilm und Musikvideos, gezeigt in achtzehn Ländern. Sitz in Klagenfurt, Kärnten.", None, None),
+      "dEUSeXmACHINAfilms, 2018 von Felipe Díaz Galarce gegründet: Tanzfilme, experimenteller Dokumentarfilm und Musikvideos, gezeigt auf mehr als 40 Festivals in 18 Ländern. Sitz in Klagenfurt, Kärnten.", None, None),
  "contacts/": ("Kontakt — dEUSeXmACHINA films",
       "Kontakt zu dEUSeXmACHINAfilms in Klagenfurt (Kärnten, Österreich) und Chile – für Kooperationen, Festivals, Vorführungen und Auftragsproduktionen.", None, None),
  "the-session/": ("The Session — dEUSeXmACHINA films",
