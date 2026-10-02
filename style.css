@@ -949,3 +949,8 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .about a[href*="felipediazgalarce.com"]{color:#6d28d9; font-weight:400; text-decoration:none; border-bottom:1px solid #6d28d9;}
 .about a[href*="felipediazgalarce.com"]:hover{color:#4c1d95; border-bottom-color:#4c1d95;}
 .about .mail{font-size:.8rem; padding-bottom:6px; letter-spacing:.08em;}
+
+.director + .director{margin-top:56px;}
+/* integrante sin foto: el texto se alinea con la columna de texto del director */
+.director.sin-foto{grid-template-columns:1fr; padding-left:274px;}
+@media (max-width:860px){ .director.sin-foto{padding-left:0;} }
