@@ -944,3 +944,8 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .ses-celda:hover .ses-bucle{transform:scale(1.03);}
 .portada .ratio .ses-bucle{transition:opacity .6s ease, transform .9s cubic-bezier(.2,.7,.3,1), filter .45s;}
 .portada:hover .ratio .ses-bucle.andando,.portada:focus-visible .ratio .ses-bucle.andando{transform:scale(1.03); filter:brightness(.72);}
+
+/* ABOUT: el sitio personal destacado en morado; el correo, mas discreto */
+.about a[href*="felipediazgalarce.com"]{color:#6d28d9; font-weight:400; text-decoration:none; border-bottom:1px solid #6d28d9;}
+.about a[href*="felipediazgalarce.com"]:hover{color:#4c1d95; border-bottom-color:#4c1d95;}
+.about .mail{font-size:.8rem; padding-bottom:6px; letter-spacing:.08em;}
