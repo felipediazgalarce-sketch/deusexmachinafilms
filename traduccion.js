@@ -23,6 +23,8 @@ window.ES = {
 "Winner": "Ganador",
 "Director": "Director",
 "— Director": "— Director",
+"— Management & Communication": "— Gestión y comunicación",
+"Management and communication, native German speaker; contact person for German-speaking clients.": "Gestión y comunicación, alemán como lengua materna; contacto para clientes de habla alemana.",
 "To request more information, email us directly.": "Para más información, escríbenos directamente.",
 "Duration: 9:19": "Duración: 9:19",
 "Duration: 14:44": "Duración: 14:44",
