@@ -960,7 +960,6 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .aliados-ticker{overflow:hidden; padding-top:10px; -webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent); mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);}
 .aliados-ticker .aliados{flex-wrap:nowrap; width:max-content; gap:0; padding:0; animation:aliados-mov 45s linear infinite;}
 .aliados-ticker .aliados li{flex:none; padding-right:72px;}
-.aliados-ticker:hover .aliados{animation-play-state:paused;}
 @keyframes aliados-mov{from{transform:translateX(-50%);} to{transform:translateX(0);}}
 @media (max-width:860px){ .aliados-ticker .aliados li{padding-right:42px;} .aliados-ticker .aliados{animation-duration:30s;} }
 @media (prefers-reduced-motion:reduce){ .aliados-ticker{-webkit-mask-image:none; mask-image:none;} .aliados-ticker .aliados{animation:none; flex-wrap:wrap; width:auto; gap:26px 0;} .aliados-ticker .aliados li[aria-hidden]{display:none;} }
