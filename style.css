@@ -60,7 +60,9 @@ header{
 header.scrolled{padding:16px 40px;}
 .logo img{height:48px; width:auto; transition:height .3s;}
 header.scrolled .logo img{height:40px;}
-.logo{flex-shrink:0; margin-right:28px;}
+.logo{flex-shrink:0; margin-right:28px; position:relative; display:block; line-height:0;}
+.logo .logo-hover{position:absolute; left:0; top:0; opacity:0; transition:opacity .25s;}
+.logo:hover .logo-hover,.logo:focus-visible .logo-hover{opacity:1;}
 nav ul{display:flex; gap:34px; list-style:none;}
 nav a{font-size:.66rem; text-decoration:none; color:var(--dim); transition:color .25s; white-space:nowrap;}
 nav a:hover,nav a:focus-visible,nav a.actual{color:var(--acento-texto);}

@@ -153,6 +153,7 @@ window.ES = {
 "Something unexpected happens.": "Ocurre algo inesperado.",
 "The film emerges.": "La película emerge.",
 "The Session": "The Session",
+"Home": "Inicio",
 "The edited audiovisual record of the encounter. Not behind-the-scenes material: part of the work itself.": "El registro audiovisual editado del encuentro. No es material de detrás de cámara: es parte de la obra.",
 "Frames from the session": "Fotogramas de la sesión",
 "← All sessions": "← Todas las sesiones",
