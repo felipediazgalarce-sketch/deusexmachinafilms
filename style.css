@@ -58,7 +58,8 @@ header{
   transition:padding .3s;
 }
 header.scrolled{padding:16px 40px;}
-.logo img{height:21px; width:auto;}
+.logo img{height:48px; width:auto; transition:height .3s;}
+header.scrolled .logo img{height:40px;}
 .logo{flex-shrink:0; margin-right:28px;}
 nav ul{display:flex; gap:34px; list-style:none;}
 nav a{font-size:.66rem; text-decoration:none; color:var(--dim); transition:color .25s; white-space:nowrap;}
@@ -233,7 +234,7 @@ footer{
 /* el menu tiene siete secciones: por debajo de 1180px pasa al boton, como en el celular */
 @media (max-width:1180px){
   .burger{display:block;}
-  nav{position:fixed; inset:60px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
+  nav{position:fixed; inset:74px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
   nav.open{display:block;}
   nav ul{flex-direction:column; gap:0; padding:10px 40px 24px;}
   nav a{display:block; padding:16px 0; font-size:.72rem;}
@@ -244,7 +245,7 @@ footer{
   header{padding:18px 22px;}
   header.scrolled{padding:14px 22px;}
   .burger{display:block;}
-  nav{position:fixed; inset:60px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
+  nav{position:fixed; inset:74px 0 auto 0; background:var(--bg); border-bottom:1px solid var(--line-2); box-shadow:0 12px 24px rgba(0,0,0,.10); display:none;}
   nav.open{display:block;}
   nav ul{flex-direction:column; gap:0; padding:10px 22px 24px;}
   nav a{display:block; padding:16px 0; font-size:.72rem;}
@@ -801,7 +802,7 @@ html[lang="es"] span.es{display:none;}
 /* ================= ABOUT: logo que cae letra por letra =================
    Cada letra es un SVG propio dentro de un span HTML: asi recibe
    perspectiva 3D real, cosa que los elementos internos de un SVG no admiten. */
-.logo-animado{position:relative; width:min(100%,620px); aspect-ratio:666/146; margin:0 0 64px; color:var(--text);}
+.logo-animado{position:relative; width:100%; aspect-ratio:1157.5/95.6; margin:0 0 64px; color:var(--text);}
 .logo-animado .letra{
   position:absolute; display:block; transform-origin:50% 100%;
   animation:letra-cae 1.15s cubic-bezier(.2,.75,.2,1) both;
@@ -964,11 +965,10 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .socia{margin-top:28px; padding-top:22px; border-top:1px solid rgba(0,0,0,.12);}
 
 /* Nombre: d, e y m en turquesa para que se lea deus ex machina */
-.dem{color:var(--acento); background:#0a0a0a; padding:0 .06em; margin:0 .02em;}
-.logo-animado .letra[style*="--i:0;"],.logo-animado .letra[style*="--i:4;"],.logo-animado .letra[style*="--i:6;"]{color:var(--acento);}
+.dem{outline:1px solid var(--acento); outline-offset:1px; padding:0 .04em;}
 
 /* About: d, e y m del logo animado dentro de una caja negra (version 4) */
-.logo-animado .caja{position:absolute; display:block; background:#0a0a0a; transform-origin:50% 100%;
+.logo-animado .caja{position:absolute; display:block; box-sizing:border-box; border:1.5px solid var(--acento); transform-origin:50% 100%;
   animation:letra-cae 1.15s cubic-bezier(.2,.75,.2,1) both; animation-delay:calc(var(--i) * 75ms + 250ms);}
 @media (prefers-reduced-motion:reduce){ .logo-animado .caja{animation:none;} }
 
@@ -987,3 +987,5 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .sellos-banda .sello-pais{color:var(--dim); font-size:9px; margin-top:2px;}
 @media (max-width:860px){ .sellos-banda{--lw:96px; --lh:40px; --em:4.5px; --b:7px; --i:5px;} .sellos-banda li{padding-right:14px;} .sellos-banda .sello-pais{font-size:7px;} }
 @media (prefers-reduced-motion:reduce){ .sellos-banda{animation:none; flex-wrap:wrap; width:auto;} .sellos-banda li[aria-hidden]{display:none;} }
+
+@media (max-width:860px){ .logo img{height:38px;} header.scrolled .logo img{height:34px;} }
