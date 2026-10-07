@@ -964,5 +964,10 @@ a.ratio{display:block; color:inherit; text-decoration:none;}
 .socia{margin-top:28px; padding-top:22px; border-top:1px solid rgba(0,0,0,.12);}
 
 /* Nombre: d, e y m en turquesa para que se lea deus ex machina */
-.dem{color:var(--acento);}
+.dem{color:var(--acento); background:#0a0a0a; padding:0 .06em; margin:0 .02em;}
 .logo-animado .letra[style*="--i:0;"],.logo-animado .letra[style*="--i:4;"],.logo-animado .letra[style*="--i:6;"]{color:var(--acento);}
+
+/* About: d, e y m del logo animado dentro de una caja negra (version 4) */
+.logo-animado .caja{position:absolute; display:block; background:#0a0a0a; transform-origin:50% 100%;
+  animation:letra-cae 1.15s cubic-bezier(.2,.75,.2,1) both; animation-delay:calc(var(--i) * 75ms + 250ms);}
+@media (prefers-reduced-motion:reduce){ .logo-animado .caja{animation:none;} }
