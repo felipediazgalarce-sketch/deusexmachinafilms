@@ -154,6 +154,8 @@ window.ES = {
 "The film emerges.": "La película emerge.",
 "The Session": "The Session",
 "Home": "Inicio",
+"Filmed in the Netherlands": "Filmado en los Países Bajos",
+"Elías André also composed the music of": "Elías André también compuso la música de",
 "All festivals and awards (47)": "Todos los festivales y premios (47)",
 "Dance & music video films, documentary & stage video": "Cine de danza y videoclips, documental y video escénico",
 "Based in Austria · Chile": "Con base en Austria · Chile",
