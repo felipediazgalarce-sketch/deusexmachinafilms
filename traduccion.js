@@ -154,6 +154,7 @@ window.ES = {
 "The film emerges.": "La película emerge.",
 "The Session": "The Session",
 "Home": "Inicio",
+"Experimental dance films, music videos, documentary & stage videos": "Videodanza experimental, videoclips, documental y video escénico",
 "An audiovisual practice born from the encounter between a dancer and a filmmaker.": "Una práctica audiovisual a partir del encuentro entre un(a) bailarín(a) y un cineasta.",
 "We choose a place, observe its atmosphere, imagine a path. Without knowing when it begins, we let it flow wherever time takes it.": "Elegimos un lugar, observamos el ambiente, imaginamos un trayecto. Sin saber cuándo empieza, lo dejamos fluir hacia donde el tiempo lo lleve.",
 "There are no mistakes and no accidents: it is presence dancing with uncertainty.": "No hay error ni accidente: es la presencia bailando la incertidumbre.",
