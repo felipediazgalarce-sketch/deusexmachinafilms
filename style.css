@@ -999,6 +999,6 @@ footer.contacto-banda{background:#0a0a0a; color:#d6d3cf; border-top:0; text-alig
 .cb-mail:hover,.cb-mail:focus-visible{color:#fff; border-color:#fff;}
 .cb-pie{margin:46px 0 0; font-size:.6rem; color:#77736d;}
 
-/* The Session destacado en el menu: caja negra, letra blanca, verde al pasar el cursor */
-nav a[href$="the-session/"]{background:#0a0a0a; color:#fff; padding:7px 10px; transition:color .25s;}
-nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav a[href$="the-session/"].actual{color:#3fe0c5;}
+/* The Session destacado en el menu: letra manuscrita (Caveat), verde al pasar el cursor */
+nav a[href$="the-session/"]{font-family:'Caveat',cursive; font-weight:600; font-size:1.32rem; text-transform:none; letter-spacing:0; color:var(--text); line-height:1; transition:color .25s;}
+nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav a[href$="the-session/"].actual{color:var(--acento-texto);}
