@@ -25,9 +25,9 @@ def path(g,fill,extra=""):
     t=g["t"]; tr=f' transform="translate({t[0]:.2f} {t[1]:.2f})"' if t!=(0,0) else ""
     return f'<path d="{g["d"]}" fill="{fill}"{tr}{extra}/>'
 # ---- disenos: lista de glifos en orden d E U S e X m A C H I N A f i l m s
-def cuatro_lineas(LIN=0.88):
+def cuatro_lineas(LIN=0.88,GF=0.66):
     lineas=[linea(t,0,S*(0.75+k*LIN),S) for k,t in enumerate(["dEUS","eX","mACHINA"])]
-    lineas.append(linea("films",0,S*(0.75+2*LIN)+S*0.66,S*SF,TRACK_F))
+    lineas.append(linea("films",0,S*(0.75+2*LIN)+S*GF,S*SF,TRACK_F))
     ancho=max(max(x["bb"][2] for x in l)-min(x["bb"][0] for x in l) for l in lineas)
     return [g for l in lineas for g in centrar(l,ancho/2)]
 def una_linea(G=0.30):
@@ -57,3 +57,24 @@ def limites(gls,rects=()):
 def svg(gls,cuerpo,rects=(),M=8,defs=""):
     x0,y0,x1,y1=limites(gls,rects)
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0-M:.2f} {y0-M:.2f} {x1-x0+2*M:.2f} {y1-y0+2*M:.2f}"><defs>{defs}</defs>{cuerpo}</svg>'
+def _films_centrado(base,ancho_obj,cx):
+    # films con el tracking necesario para ocupar ancho_obj, centrado en cx
+    g=linea("films",0,base,S*SF,0); w=g[-1]["bb"][2]-g[0]["bb"][0]
+    tr=max(0.0,(ancho_obj-w)/4/(S*SF)); g=linea("films",0,base,S*SF,tr)
+    return centrar(g,cx)
+def original(GF=0.66):
+    l1=linea("dEUSeXmACHINA",0,S*0.75,S); W=l1[-1]["bb"][2]-l1[0]["bb"][0]
+    return l1+_films_centrado(S*(0.75+GF),W*0.48,(l1[0]["bb"][0]+l1[-1]["bb"][2])/2)
+def separado(GF=0.66,G=0.30):
+    out=[]; x=0
+    for t in ["dEUS","eX","mACHINA"]:
+        g=linea(t,x,S*0.75,S); out+=g; x=g[-1]["bb"][2]+S*G
+    W=out[-1]["bb"][2]-out[0]["bb"][0]
+    return out+_films_centrado(S*(0.75+GF),W*0.42,(out[0]["bb"][0]+out[-1]["bb"][2])/2)
+def tres_lineas(LIN=0.88,G=0.30,GF=0.66):
+    l1=linea("dEUS",0,S*0.75,S)
+    g1=linea("eX",0,S*(0.75+LIN),S); x=g1[-1]["bb"][2]+S*G; g2=linea("mACHINA",x,S*(0.75+LIN),S); l2=g1+g2
+    l3=linea("films",0,S*(0.75+LIN)+S*GF,S*SF,TRACK_F)
+    A=max(max(g["bb"][2] for g in l)-min(g["bb"][0] for g in l) for l in (l1,l2,l3))
+    return [g for l in (l1,l2,l3) for g in centrar(l,A/2)]
+FORMATOS={"1_original":original,"2_separado":separado,"3_tres-lineas":tres_lineas,"4_cuatro-lineas":cuatro_lineas,"5_una-linea":una_linea}
