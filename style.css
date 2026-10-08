@@ -998,3 +998,7 @@ footer.contacto-banda{background:#0a0a0a; color:#d6d3cf; border-top:0; text-alig
 .cb-mail{text-transform:none; display:inline-block; font-weight:200; font-size:clamp(1.25rem,3.4vw,2.4rem); letter-spacing:.02em; color:#3fe0c5; text-decoration:none; border-bottom:1px solid rgba(63,224,197,.35); padding-bottom:4px; transition:color .25s,border-color .25s;}
 .cb-mail:hover,.cb-mail:focus-visible{color:#fff; border-color:#fff;}
 .cb-pie{margin:46px 0 0; font-size:.6rem; color:#77736d;}
+
+/* The Session destacado en el menu: caja negra, letra blanca, verde al pasar el cursor */
+nav a[href$="the-session/"]{background:#0a0a0a; color:#fff; padding:7px 10px; transition:color .25s;}
+nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav a[href$="the-session/"].actual{color:#3fe0c5;}
