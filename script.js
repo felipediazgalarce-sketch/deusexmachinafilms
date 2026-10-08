@@ -109,69 +109,25 @@
 })();
 
 
-/* ============ IDIOMA: ingles <-> español (+ aleman en /de/) ============
-   El sitio se escribe en ingles. La traduccion vive en traduccion.js,
-   como pares "frase en ingles": "frase en español".
-   Para añadir texto nuevo basta con sumar el par a ese archivo.
+/* ============ IDIOMA: ingles en la raiz, español en /es/, aleman en /de/ ============
+   Las versiones en español y aleman son paginas estaticas (Google las indexa).
+   Se generan con _herramientas/generar_de.py a partir de traduccion.js y de.json.
    =================================================== */
 (function(){
   var IDIOMA = "dxm-idioma";
   var botones = document.querySelectorAll(".bandera-btn");
   if (!botones.length) return;
-
-  function textos(){
-    var salida = [], saltar = {SCRIPT:1, STYLE:1, NOSCRIPT:1};
-    var it = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function(n){
-        if (saltar[n.parentNode.nodeName]) return NodeFilter.FILTER_REJECT;
-        return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-      }
-    });
-    var n; while ((n = it.nextNode())) salida.push(n);
-    return salida;
-  }
-
-  /* version alemana: son paginas estaticas bajo /de/ (para que Google las indexe).
-     Desde /de/ el ingles y el español vuelven a la pagina equivalente de la raiz. */
-  var enAleman = document.documentElement.getAttribute("data-version") === "de";
-  function irA(ruta){ location.href = ruta + location.hash; }
-  function rutaRaiz(){ return location.pathname.replace(/^\/de(\/|$)/, "/"); }
-  function rutaAleman(){ return "/de" + location.pathname; }
-
-  function aplicar(lang){
-    var dic = window.ES || {};
-    textos().forEach(function(n){
-      if (n.__en === undefined) n.__en = n.nodeValue;          // guarda el original
-      var bruto = n.__en;
-      var clave = bruto.replace(/\s+/g, " ").trim();
-      if (lang === "es" && dic[clave]) {
-        /* se conservan los espacios de los bordes: el texto puede venir con
-           saltos de linea o espacios dobles del maquetado */
-        n.nodeValue = bruto.match(/^\s*/)[0] + dic[clave] + bruto.match(/\s*$/)[0];
-      } else {
-        n.nodeValue = bruto;
-      }
-    });
-    document.documentElement.lang = lang;
-    botones.forEach(function(x){ x.setAttribute("aria-pressed", x.dataset.lang === lang ? "true" : "false"); });
-    try { localStorage.setItem(IDIOMA, lang); } catch(e){}
-  }
-
-  var guardado = "en";
-  try { guardado = localStorage.getItem(IDIOMA) || "en"; } catch(e){}
-
-  if (enAleman) {
-    botones.forEach(function(x){ x.setAttribute("aria-pressed", x.dataset.lang === "de" ? "true" : "false"); });
-  } else if (guardado === "de") {
-    location.replace(rutaAleman() + location.hash);
-  } else if (guardado === "es") aplicar("es"); else aplicar("en");
-
+  var actual = document.documentElement.getAttribute("data-version") || "en";
+  function rutaBase(){ return location.pathname.replace(/^\/(de|es)(\/|$)/, "/"); }
+  function ruta(lang){ var b = rutaBase(); return lang === "en" ? b : "/" + lang + b; }
+  botones.forEach(function(x){ x.setAttribute("aria-pressed", x.dataset.lang === actual ? "true" : "false"); });
+  var guardado = null;
+  try { guardado = localStorage.getItem(IDIOMA); } catch(e){}
+  if (actual === "en" && (guardado === "es" || guardado === "de")) { location.replace(ruta(guardado) + location.hash); return; }
   botones.forEach(function(x){ x.addEventListener("click", function(){
     var lang = x.dataset.lang;
     try { localStorage.setItem(IDIOMA, lang); } catch(e){}
-    if (lang === "de") { if (!enAleman) irA(rutaAleman()); }
-    else if (enAleman) irA(rutaRaiz());
-    else aplicar(lang);
+    if (lang !== actual) location.href = ruta(lang) + location.hash;
   }); });
 })();
 

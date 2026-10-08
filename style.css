@@ -1002,3 +1002,27 @@ footer.contacto-banda{background:#0a0a0a; color:#d6d3cf; border-top:0; text-alig
 /* The Session destacado en el menu: letra manuscrita (Caveat), verde al pasar el cursor */
 nav a[href$="the-session/"]{font-family:'Caveat',cursive; font-weight:600; font-size:1.32rem; text-transform:none; letter-spacing:0; color:var(--text); line-height:1; transition:color .25s;}
 nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav a[href$="the-session/"].actual{color:var(--acento-texto);}
+.cb-links{margin:26px 0 0; display:flex; justify-content:center; flex-wrap:wrap; gap:10px 28px;}
+.cb-links a{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:#d6d3cf; text-decoration:none; transition:color .25s;}
+.cb-links a:hover,.cb-links a:focus-visible{color:#3fe0c5;}
+
+/* About: lista completa de festivales bajo las bandas de laureles */
+.festivales-lista{margin:-26px 0 52px;}
+.festivales-lista summary{cursor:pointer; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--acento-texto); list-style:none; display:inline-block; border-bottom:1px solid currentColor; padding-bottom:2px;}
+.festivales-lista summary::-webkit-details-marker{display:none;}
+.festivales-lista summary::after{content:" ↓";}
+.festivales-lista[open] summary::after{content:" ↑";}
+.fl-grid{margin-top:26px; columns:3 260px; column-gap:40px;}
+.fl-obra{break-inside:avoid; margin-bottom:22px;}
+.fl-obra h4{font-weight:400; font-size:.86rem; color:var(--text); margin:0 0 6px;}
+.fl-obra ul{list-style:none; margin:0; padding:0;}
+.fl-obra li{font-size:.78rem; line-height:1.55; color:var(--dim); font-weight:300;}
+.fl-cat{font-size:.6rem; letter-spacing:.12em; text-transform:uppercase; color:var(--dim-2);}
+.fl-pais{color:var(--dim-2);}
+.fl-obra li.premio,.fl-obra li.premio .fl-cat{color:var(--acento-texto); font-weight:400;}
+
+/* selector de idioma en texto: EN · ES · DE */
+.idioma{gap:2px;}
+.bandera-btn{font-family:inherit; font-size:.62rem; letter-spacing:.14em; color:var(--dim-2); padding:4px 5px; line-height:1; opacity:1;}
+.bandera-btn[aria-pressed="true"]{color:var(--text); font-weight:500; text-decoration:underline; text-underline-offset:4px;}
+.bandera-btn:hover{color:var(--acento-texto); opacity:1;}
