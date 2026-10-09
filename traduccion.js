@@ -252,6 +252,7 @@ window.ES = {
 "Composer": "Compositor",
 "Creation & direction": "Creación y dirección",
 "Creation & performance": "Creación e interpretación",
+"Creation & sharing": "Creación y puesta en común",
 "Direction & performance": "Dirección e interpretación",
 "General production": "Producción general",
 "Integral design": "Diseño integral",
