@@ -73,6 +73,10 @@ nav a:hover,nav a:focus-visible,nav a.actual{color:var(--acento-texto);}
 .ratio{position:relative; width:100%; padding-top:56.25%; background:#050505; overflow:hidden;}
 .ratio iframe,.ratio > img,.ratio > video{position:absolute; inset:0; width:100%; height:100%; border:0; object-fit:cover;}
 .ratio[data-video]{cursor:pointer;}
+.ratio[data-instagram]{cursor:pointer;}
+/* Instagram (Tibia): al pulsar, el video vertical se abre dentro del sitio */
+.obra .ratio.ig-abierto{padding:24px 0; background:#000; display:flex; justify-content:center; cursor:default;}
+.ratio.ig-abierto iframe{position:static; width:400px; max-width:calc(100% - 32px); height:760px; background:#fff;}
 .play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   pointer-events:none; color:rgba(255,255,255,.8);}
 /* solo el circulo recibe el cursor, no el fotograma entero */
