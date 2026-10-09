@@ -43,6 +43,14 @@
 
   // Los videos se cargan solo al pulsarlos: la pagina no arranca con 17 iframes.
   function incrustar(caja, id, titulo) {
+    if (caja.dataset.mp4) {
+      var v = document.createElement("video");
+      v.src = caja.dataset.mp4; v.controls = true; v.autoplay = true; v.playsInline = true;
+      v.setAttribute("aria-label", titulo || "Video");
+      caja.innerHTML = "";
+      caja.appendChild(v);
+      return;
+    }
     var f = document.createElement("iframe");
     f.src = caja.dataset.instagram
           ? "https://www.instagram.com/p/" + caja.dataset.instagram + "/embed"
@@ -59,7 +67,7 @@
   }
 
   // Bloques de video con poster (fichas completas y destacado)
-  Array.prototype.forEach.call(document.querySelectorAll(".ratio[data-video], .ratio[data-vimeo], .ratio[data-instagram]"), function (caja) {
+  Array.prototype.forEach.call(document.querySelectorAll(".ratio[data-video], .ratio[data-vimeo], .ratio[data-instagram], .ratio[data-mp4]"), function (caja) {
     var p = document.createElement("span");
     p.className = "play";
     p.innerHTML = SVG;
