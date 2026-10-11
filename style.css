@@ -537,8 +537,8 @@ body.session main > section{padding:0;}
   color:rgba(255,255,255,.72); margin-bottom:16px;
 }
 .ses-hero h1{
-  font-weight:700; font-size:clamp(2.6rem,8.5vw,7rem); line-height:.94;
-  letter-spacing:-.022em; color:#fff; margin:0 auto 18px; text-transform:none;
+  font-family:'Caveat',cursive; font-weight:600; font-size:clamp(2.6rem,8.5vw,7rem); line-height:.94;
+  letter-spacing:0; color:#fff; margin:0 auto 18px; text-transform:none;
 }
 .ses-hero .lema{
   font-weight:200; font-size:clamp(1.05rem,2.4vw,1.7rem); line-height:1.4;
