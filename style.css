@@ -1031,3 +1031,4 @@ nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav 
 .bandera-btn{font-family:inherit; font-size:.62rem; letter-spacing:.14em; color:var(--dim-2); padding:4px 5px; line-height:1; opacity:1;}
 .bandera-btn[aria-pressed="true"]{color:var(--text); font-weight:500; text-decoration:underline; text-underline-offset:4px;}
 .bandera-btn:hover{color:var(--acento-texto); opacity:1;}
+.sec-head h2.titulo-session{font-family:'Caveat',cursive; font-weight:600; font-size:1.45rem; line-height:1; text-transform:none; letter-spacing:0;}
