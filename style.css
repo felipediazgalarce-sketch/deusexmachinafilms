@@ -1032,3 +1032,10 @@ nav a[href$="the-session/"]:hover,nav a[href$="the-session/"]:focus-visible,nav 
 .bandera-btn[aria-pressed="true"]{color:var(--text); font-weight:500; text-decoration:underline; text-underline-offset:4px;}
 .bandera-btn:hover{color:var(--acento-texto); opacity:1;}
 .sec-head h2.titulo-session{font-family:'Caveat',cursive; font-weight:600; font-size:1.45rem; line-height:1; text-transform:none; letter-spacing:0;}
+/* The Session: video de Instagram en ventana sobre la pagina */
+.ig-capa{position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,.92); display:flex; align-items:center; justify-content:center; padding:56px 16px 24px;}
+.ig-capa[hidden]{display:none;}
+.ig-marco iframe{display:block; width:400px; max-width:calc(100vw - 32px); height:min(760px, calc(100vh - 90px)); border:0; background:#fff;}
+.ig-cerrar{position:absolute; top:10px; right:18px; background:none; border:0; color:#fff; font-size:2.6rem; font-weight:200; line-height:1; cursor:pointer; padding:4px 8px;}
+.ig-cerrar:hover,.ig-cerrar:focus-visible{color:#3fe0c5;}
+html.ig-abierta{overflow:hidden;}

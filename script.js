@@ -100,6 +100,50 @@
     });
   }
 
+  // The Session: los videos de Instagram se abren dentro del sitio, en una ventana sobre la pagina
+  var celdasIg = document.querySelectorAll(".ses-celda[data-instagram]");
+  if (celdasIg.length) {
+    var capa = document.createElement("div");
+    capa.className = "ig-capa";
+    capa.setAttribute("role", "dialog");
+    capa.setAttribute("aria-modal", "true");
+    capa.hidden = true;
+    capa.innerHTML = '<button type="button" class="ig-cerrar" aria-label="Close">&times;</button><div class="ig-marco"></div>';
+    document.body.appendChild(capa);
+    var marco = capa.querySelector(".ig-marco"), origen = null;
+    function cerrarIg() {
+      capa.hidden = true;
+      marco.innerHTML = "";
+      document.documentElement.classList.remove("ig-abierta");
+      if (origen) origen.focus();
+    }
+    capa.addEventListener("click", function (e) {
+      if (e.target === capa || e.target.classList.contains("ig-cerrar")) cerrarIg();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !capa.hidden) cerrarIg();
+    });
+    Array.prototype.forEach.call(celdasIg, function (c) {
+      var p = document.createElement("span");
+      p.className = "play";
+      p.innerHTML = SVG;
+      c.appendChild(p);
+      c.addEventListener("click", function (e) {
+        e.preventDefault();
+        origen = c;
+        var f = document.createElement("iframe");
+        f.src = "https://www.instagram.com/p/" + c.dataset.instagram + "/embed";
+        f.title = (c.querySelector(".nombre") || {}).textContent || "The Session";
+        f.allow = "autoplay; encrypted-media";
+        marco.innerHTML = "";
+        marco.appendChild(f);
+        capa.hidden = false;
+        document.documentElement.classList.add("ig-abierta");
+        capa.querySelector(".ig-cerrar").focus();
+      });
+    });
+  }
+
   // Fichas de la grilla de portada
   Array.prototype.forEach.call(document.querySelectorAll("button.work"), function (b) {
     var p = b.querySelector(".play");
