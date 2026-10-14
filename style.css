@@ -1057,8 +1057,8 @@ html{overflow-x:clip;}
   background:url(img/marmol-claro.png) center/1600px auto repeat;
   -webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent); mask-image:linear-gradient(to bottom,#000 40%,transparent);}
 /* Secciones del home numeradas como los actos de una tragedia */
-.sec-head .acto{font-family:'Jost',sans-serif; font-weight:200; font-size:.72rem; letter-spacing:.18em; color:var(--dim-2); margin-right:2px; align-self:center;}
-/* El logo desciende al entrar, como el dios en la grua del teatro griego (una vez por visita) */
+.sec-head .acto{font-family:Georgia,'Times New Roman',serif; font-weight:400; font-size:1.15rem; line-height:1; letter-spacing:.06em; color:var(--text); opacity:.55; margin-right:8px; align-self:center;}
+/* El logo desciende al entrar a cada pagina, como el dios en la grua del teatro griego */
 @keyframes mechane{0%{transform:translateY(-22px); opacity:0;} 60%{opacity:1;} 100%{transform:translateY(0); opacity:1;}}
-html.desciende .logo{animation:mechane 1.9s cubic-bezier(.22,.8,.25,1) .15s both;}
-@media (prefers-reduced-motion:reduce){ html.desciende .logo{animation:none;} }
+header .logo{animation:mechane 1.9s cubic-bezier(.22,.8,.25,1) .15s both;}
+@media (prefers-reduced-motion:reduce){ header .logo{animation:none;} }

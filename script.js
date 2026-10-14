@@ -1,14 +1,4 @@
 /* dEUSeXmACHINA films — comportamiento comun a las 6 paginas */
-/* El logo baja como la maquina del teatro griego: solo la primera pagina de cada visita */
-(function () {
-  try {
-    if (!sessionStorage.getItem("dxm-mechane")) {
-      document.documentElement.classList.add("desciende");
-      sessionStorage.setItem("dxm-mechane", "1");
-    }
-  } catch (e) {}
-})();
-
 (function () {
   "use strict";
 
