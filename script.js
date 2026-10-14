@@ -158,6 +158,11 @@
     });
   });
 
+  // About us: en pantallas tactiles, tocar la estatua muestra la foto
+  Array.prototype.forEach.call(document.querySelectorAll(".estatua"), function (e) {
+    e.addEventListener("click", function () { e.classList.toggle("tocada"); });
+  });
+
   // Año del pie
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
