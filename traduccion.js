@@ -317,5 +317,8 @@ window.ES = {
 "Edmundo Bustos (Cultural Attaché, Embassy of Chile in China, 2016), the participants of the \"mide un segundo\" workshops in China, Miri Klein, Juan Díaz Figueroa": "Edmundo Bustos (Agregado Cultural de la Embajada de Chile en China, 2016), participantes de los talleres \"mide un segundo\" en China, Miri Klein, Juan Díaz Figueroa",
 "Dance": "Bailarines",
 "Producers (China)": "Productoras",
-"Supporters": "Apoyan"
+"Supporters": "Apoyan",
+"Chile — China": "Chile — China",
+"Chile": "Chile",
+"Mundomoebio and dEUSeXmACHINAfilms.": "Mundomoebio y dEUSeXmACHINAfilms."
 };
