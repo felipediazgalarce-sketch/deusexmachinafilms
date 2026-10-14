@@ -1045,3 +1045,4 @@ html.ig-abierta{overflow:hidden;}
 .estatua .marmol{position:absolute; inset:0; height:100%; object-fit:cover; transition:opacity 1.1s ease;}
 .estatua:hover .marmol,.estatua:focus .marmol,.estatua.tocada .marmol{opacity:0;}
 @media (max-width:860px){ .estatua{max-width:300px;} }
+.director.socia{border-top:0; padding-top:0;}
