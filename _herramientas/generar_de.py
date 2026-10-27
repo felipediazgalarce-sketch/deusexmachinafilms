@@ -16,7 +16,7 @@ import json, re, os, html
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITIO = "https://deusexmachinafilms.art"
 PAGINAS = ["", "short-films/", "music-video/", "collaborations/", "work-in-progress/", "about-us/",
-           "the-session/"]
+           "the-session/", "the-session/marlie-amsterdam/", "the-session/nina-valdivia/"]
 
 META = {
  "": ("dEUSeXmACHINA films — Videoproduktion, Tanzfilm & Musikvideos in Klagenfurt, Kärnten",
@@ -69,6 +69,12 @@ META_ES = {
  "the-session/": ("The Session — dEUSeXmACHINA films",
       "THE SESSION es una práctica audiovisual basada en el encuentro entre una persona real, un lugar real, una cámara, el movimiento y el tiempo. En la sesión sucede la película.",
       "THE SESSION — dEUSeXmACHINA films", "No creamos todo. Creamos las condiciones para que algo suceda."),
+ "the-session/marlie-amsterdam/": ("The Session — Marlie, Ámsterdam",
+      "THE SESSION — Marlie, Ámsterdam. Un encuentro entre una bailarina, un puente en Ámsterdam y una cámara en movimiento.",
+      "THE SESSION — Marlie, Ámsterdam", "Una persona entra en un lugar. La cámara empieza a moverse."),
+ "the-session/nina-valdivia/": ("The Session — Nina, Valdivia",
+      "THE SESSION — Nina, Valdivia. Un encuentro entre una bailarina, un bosque del sur de Chile y una cámara en movimiento.",
+      "THE SESSION — Nina, Valdivia", "Una persona entra en un lugar. La cámara empieza a moverse."),
 }
 ACTIVO = re.compile(r'\.(css|js|png|jpe?g|svg|webp|gif|mp4|webm|ico|pdf)(\?[^"]*)?$', re.I)
 
