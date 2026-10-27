@@ -198,7 +198,9 @@
    se muestra al pie del home. */
 (function(){
   var hoy = new Date().toISOString().slice(0, 10), sumar = true;
-  try { sumar = localStorage.getItem("dxm-visto") !== hoy; localStorage.setItem("dxm-visto", hoy); } catch(e){}
+  try { sumar = localStorage.getItem("dxm-visto") !== hoy; localStorage.setItem("dxm-visto", hoy);
+        /* el navegador de Felipe no suma (misma marca que usa GoatCounter) */
+        if (localStorage.getItem("skipgc") === "t") sumar = false; } catch(e){}
   fetch("https://felipediazgalarce.com/contador.php?sitio=dxm" + (sumar ? "&accion=sumar" : ""), {cache:"no-store"})
     .then(function(r){ return r.json(); })
     .then(function(d){
