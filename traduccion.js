@@ -320,5 +320,8 @@ window.ES = {
 "Supporters": "Apoyan",
 "Chile — China": "Chile — China",
 "Chile": "Chile",
-"Mundomoebio and dEUSeXmACHINAfilms.": "Mundomoebio y dEUSeXmACHINAfilms."
+"Mundomoebio and dEUSeXmACHINAfilms.": "Mundomoebio y dEUSeXmACHINAfilms.",
+"The project began with an invitation from the Extension Center of the Ministry of Culture, Arts and Heritage of Chile (CENTEX) to hold a videodance laboratory. It was first conceived as an exercise in dance for the camera. After the laboratory, however, director Felipe Díaz Galarce decided to write a text reflecting on the role of art in society, which would become the voice-over of an essay short film. To give it a voice, he invited actress and former minister Paulina Urrutia, one of the leading figures behind the creation of the Ministry.": "El proyecto surge a partir de una invitación del Centro de Extensión del Ministerio de las Culturas, las Artes y el Patrimonio de Chile (CENTEX) para realizar un laboratorio de videodanza. En un comienzo fue concebido como un ejercicio de danza para la cámara. Sin embargo, tras el laboratorio, el director Felipe Díaz Galarce decidió escribir un texto que reflexiona sobre el rol del arte en la sociedad y que se convertiría en la voz en off de un cortometraje ensayo. Para darle voz, invitó a la actriz y exministra Paulina Urrutia, una de las principales impulsoras de la creación del Ministerio.",
+"— Creative Collaborator · Management & Communication": "— Colaboradora creativa · Gestión y comunicación",
+"Native German speaker; she also speaks English, Spanish and Slovak.": "Su lengua materna es el alemán; también habla inglés, español y eslovaco."
 };
