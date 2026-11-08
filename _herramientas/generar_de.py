@@ -89,6 +89,19 @@ def poner_hreflang(t, p):
     return t.replace('</head>', hreflang(p) + '</head>', 1)
 
 def traducir_textos(t, DIC):
+    # parrafos con etiquetas internas (<em>, <strong>...): se traducen enteros si su HTML
+    # interior es una clave del diccionario, y se protegen para no traducirlos por trozos
+    guardados = []
+    def parrafo(m):
+        clave = re.sub(r'\s+', ' ', m.group(2)).strip()
+        if '<' not in clave or clave not in DIC: return m.group(0)
+        guardados.append(DIC[clave])
+        return m.group(1) + '\x00%d\x00' % (len(guardados) - 1) + m.group(3)
+    t = re.sub(r'(<p\b[^>]*>)(.*?)(</p>)', parrafo, t, flags=re.S)
+    t = _traducir_trozos(t, DIC)
+    return re.sub(r'\x00(\d+)\x00', lambda m: guardados[int(m.group(1))], t)
+
+def _traducir_trozos(t, DIC):
     trozos = re.split(r'(<[^>]+>)', t)
     dentro = None
     for i, s in enumerate(trozos):
