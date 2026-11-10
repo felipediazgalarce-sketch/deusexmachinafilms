@@ -160,7 +160,7 @@ window.ES = {
 "There are no mistakes and no accidents: it is presence dancing with uncertainty.": "No hay error ni accidente: es la presencia bailando la incertidumbre.",
 "Filmed in the Netherlands": "Filmado en los Países Bajos",
 "Elías André also composed the music of": "Elías André también compuso la música de",
-"All festivals and awards (47)": "Todos los festivales y premios (47)",
+"All festivals and awards (48)": "Todos los festivales y premios (48)",
 "Dance & music video films, documentary & stage video": "Cine de danza y videoclips, documental y video escénico",
 "Based in Austria · Chile": "Con base en Austria · Chile",
 "The edited audiovisual record of the encounter. Not behind-the-scenes material: part of the work itself.": "El registro audiovisual editado del encuentro. No es material de detrás de cámara: es parte de la obra.",
