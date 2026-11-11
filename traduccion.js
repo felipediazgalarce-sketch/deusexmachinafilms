@@ -332,5 +332,7 @@ window.ES = {
 "Creative consultant": "Asesoría creativa",
 "Casting support": "Apoyo de casting",
 "Blushes on my Cheeks": "Blushes on my Cheeks",
-"Rubor en mis mejillas": "Rubor en mis mejillas"
+"Rubor en mis mejillas": "Rubor en mis mejillas",
+"With the support of": "Con el apoyo de",
+"Extension Center of the Ministry of Culture, Arts and Heritage of Chile (CENTEX).": "Centro de Extensión del Ministerio de las Culturas, las Artes y el Patrimonio de Chile (CENTEX)."
 };
